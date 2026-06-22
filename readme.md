@@ -56,8 +56,8 @@ npm.cmd install
 npm.cmd run dev
 ```
 
-Open `http://localhost:5173`. The API runs on `http://localhost:3001`. Build the frontend with
-`npm.cmd run build`, or run only the API with `npm.cmd start`.
+Open `http://localhost:5173`. The API runs on `http://localhost:3001`. For a production-style local
+run, use `npm.cmd run build`, then `npm.cmd start`, and open `http://localhost:3001`.
 
 API endpoints:
 
