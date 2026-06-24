@@ -21,7 +21,8 @@ const upload = multer({
   }),
   limits: { fileSize: 100 * 1024 * 1024, files: 1 },
 });
-const python = process.env.EVA_PYTHON || path.join(root, ".venv", "Scripts", "python.exe");
+const python = process.env.EVA_PYTHON
+  || (process.platform === "win32" ? path.join(root, ".venv", "Scripts", "python.exe") : "python3");
 let analysisRunning = false;
 let lastSuccessfulReport = null;
 
@@ -38,6 +39,24 @@ function runAnalysis(videoPath, expectedText) {
 
 export function createApp(analyze = runAnalysis) {
   const app = express();
+  const allowedOrigins = String(process.env.EVA_ALLOWED_ORIGINS || "")
+    .split(",")
+    .map((origin) => origin.trim())
+    .filter(Boolean);
+  app.use((req, res, next) => {
+    const origin = req.headers.origin;
+    const originAllowed = origin && (
+      allowedOrigins.includes("*") || allowedOrigins.includes(origin)
+    );
+    if (originAllowed) {
+      res.setHeader("Access-Control-Allow-Origin", origin);
+      res.setHeader("Vary", "Origin");
+      res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
+      res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    }
+    if (req.method === "OPTIONS") return res.sendStatus(204);
+    return next();
+  });
   app.use(express.json({ limit: "32kb" }));
   app.use("/api/analyze", rateLimit({
     windowMs: Number(process.env.EVA_RATE_WINDOW_MS || 15 * 60 * 1000),
