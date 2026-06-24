@@ -1,32 +1,75 @@
 # EVA Speak
 
-Stage 1 is a local, English-only speaking analysis MVP. It accepts an MP3, transcribes it with
-`faster-whisper` using `tiny.en` on CPU, compares the transcript with the fixed prompt, and writes
-a JSON report.
+EVA Speak is a local AI practice tool that helps a person review how they speak in a recorded interview or presentation.
 
-Stage 2 accepts the matching MP4 and uses OpenCV with MediaPipe Face Mesh to estimate face presence,
-face direction, eye contact, looking-away events, and head stability. These are approximate visual
-communication signals, not exact gaze measurements.
+Upload an MP4 video, enter the expected text, and the app analyzes speech clarity plus basic visual communication estimates. Results are shown in the React UI and saved as JSON/CSV artifacts by the Python pipeline.
 
-Stage 3 combines both analyses in a local Streamlit dashboard, generates rule-based feedback and an
-interview readiness estimate, stores JSON reports, and appends a CSV history row.
+## What the project does
+
+The project has three analysis stages:
+
+1. Speech analysis
+2. Visual analysis
+3. Combined React UI, API, and reporting
+
+### Stage 1: Speech analysis
+
+Stage 1 takes an MP3 file, transcribes it with `faster-whisper`, compares the transcript with the expected text, and produces a JSON report.
+
+It helps answer questions like:
+
+- Did the speaker say the expected words?
+- Were there missing or extra words?
+- How fluent was the speech?
+- Were there long pauses, fillers, or repeated phrases?
+
+### Stage 2: Visual analysis
+
+Stage 2 takes an MP4 file and uses OpenCV plus MediaPipe Face Mesh to estimate visual communication signals.
+
+It looks at things like:
+
+- Whether a face was detected
+- Estimated eye contact
+- Face direction
+- Looking-away events
+- Head stability
+
+These are approximate estimates, not exact gaze tracking or emotion detection.
+
+### Stage 3: Combined report and UI
+
+Stage 3 combines the speech and visual results in the React UI through a lightweight Express API.
+
+It also:
+
+- Generates rule-based feedback
+- Calculates an interview-readiness score
+- Saves JSON reports
+- Appends a CSV history row
+
+## Main features
+
+- Upload and preview an MP4 video in the browser
+- Compare spoken words with the expected text
+- See readiness, fluency, pronunciation, and eye-contact estimates at the top of the results
+- See transcript comparison, missing words, inserted words, and substitutions
+- See speech metrics including confidence, low-confidence words, pauses, fillers, repetitions, and filler breakdown
+- See visual metrics including face direction and facial-expression estimate graphs
+- See feedback and known limitations
+- Download the final JSON report
+- Keep a local CSV history of previous analyses
+- Run the same pipeline from the command line
 
 Default sample prompt:
 
 > The quick brown fox jumps over the lazy dog.
 
-The dashboard supports two expected-text modes:
-
-- **Default sample** keeps the prompt above available as the fixed sample.
-- **User-entered** accepts a custom prompt or paragraph up to 5,000 characters.
-
-This project provides automated interview-practice feedback. Its pronunciation-style accuracy,
-confidence, pause, and repetition metrics are estimates and are not clinical assessments.
-
 ## Requirements
 
 - Python 3.12.3
-- FFmpeg/FFprobe available on `PATH`
+- Node.js 20 or newer
+- FFmpeg and FFprobe available on `PATH`
 - Windows, macOS, or Linux
 - Internet access on the first run so `faster-whisper` can download `tiny.en`
 
@@ -39,25 +82,33 @@ python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
+npm.cmd install
 ```
 
 The project is verified with Python 3.12.3.
 
-## Run
-
-### React UI and JavaScript API
-
-The React client uses a lightweight Express API. The API validates and temporarily stores uploads,
-then calls the existing Python pipeline through `app.api_bridge`; it does not duplicate the speech
-or vision analysis.
+## Run the React UI and JavaScript API
 
 ```powershell
-npm.cmd install
 npm.cmd run dev
 ```
 
-Open `http://localhost:5173`. The API runs on `http://localhost:3001`. For a production-style local
-run, use `npm.cmd run build`, then `npm.cmd start`, and open `http://localhost:3001`.
+Open `http://localhost:5173`. The API runs on `http://localhost:3001`.
+
+After the page opens:
+
+1. Upload an MP4 video.
+2. Preview the uploaded video.
+3. Enter or edit the expected text.
+4. Click **Analyze communication**.
+5. Review the transcript, speech metrics, visual metrics, feedback, and limitations.
+
+For a production-style local run:
+
+```powershell
+npm.cmd run build
+npm.cmd start
+```
 
 API endpoints:
 
@@ -65,113 +116,115 @@ API endpoints:
 - `POST /api/analyze/full` with multipart fields `video` and `expectedText`
 - `GET /api/reports/{report_id}`
 
-Analysis requests are limited to 5 per client per 15 minutes and one active analysis per process.
-Configure these with `EVA_RATE_LIMIT`, `EVA_RATE_WINDOW_MS`, and `EVA_ANALYSIS_TIMEOUT_MS`. A client
-may add `?fallback=last` to explicitly accept the last successful in-memory report when live analysis
-fails. Such a response uses HTTP 206 and includes `degraded: true`; the API never invents fallback
-scores. Rate-limit responses use HTTP 429, and busy responses use HTTP 503.
+Request limits:
 
-### Streamlit dashboard
+- 5 analyses per client per 15 minutes
+- 1 active analysis per process
 
-```powershell
-.\run_dashboard.cmd
-```
+Helpful environment variables:
 
-The launcher deliberately uses the project `.venv`. This avoids accidentally running the global
-Anaconda Streamlit executable, which does not necessarily contain EVA Speak dependencies. Equivalent
-explicit command:
+- `EVA_RATE_LIMIT`
+- `EVA_RATE_WINDOW_MS`
+- `EVA_ANALYSIS_TIMEOUT_MS`
 
-```powershell
-.\.venv\Scripts\python.exe -m streamlit run dashboard\streamlit_app.py
-```
+If you add `?fallback=last`, the API can return the last successful in-memory report when live analysis fails. That response uses HTTP 206 and includes `degraded: true`.
 
-Open the displayed local URL, upload an MP4, and select **Analyze communication**. The dashboard
-previews the video and provides transcript, pronunciation-style, confidence, fluency, pause, filler,
-repetition, eye-contact estimate, face direction, head stability, feedback, and download sections.
+## Run from the command line
 
-It also shows VADER transcript sentiment (`positive`, `neutral`, or `negative`) and a basic
-MediaPipe landmark-based facial-expression estimate (`happy`, `neutral`, or `serious`). These
-estimates are informational only and do not affect interview scores.
+### Combined analysis
 
-The expected text is fixed. A recording that says different words will correctly receive a high
-WER and low pronunciation-style accuracy even if the speaker sounds clear.
-
-### Complete command-line analysis
+Use this when you want one JSON report for both speech and visual analysis:
 
 ```powershell
 python -m app.full_cli "Videos\01.Video.mp4" --output "jsons\full-report.json"
 ```
 
-Use custom expected text from the CLI:
+You can also pass custom expected text:
 
 ```powershell
 python -m app.full_cli "Videos\01.Video.mp4" --expected-text "Tell me about yourself."
 ```
 
-This extracts temporary MP3 audio, runs speech and vision analysis, creates a combined JSON report,
-and appends `Data/history/analysis_history.csv`.
+This extracts temporary audio, runs the analysis, writes a combined JSON report, and appends `Data/history/analysis_history.csv`.
 
 ### Speech-only analysis
 
 Input rules:
 
 - MP3 only
-- 100 MB maximum
-- 10 seconds to 10 minutes inclusive
+- Up to 100 MB
+- Between 10 seconds and 10 minutes
 
 ```powershell
 python mp3_to_json.py "Audios\01_Video.mp3"
 ```
 
-Choose the report location:
+To choose the output file:
 
 ```powershell
 python -m app.cli "Audios\01_Video.mp3" --output "jsons\stage1-report.json"
 ```
 
-The source MP3 is preserved. During analysis it is copied into an isolated upload directory, and
-that processing copy is deleted immediately afterward. Reports default to `Data/reports/`.
+The source MP3 is preserved. The temporary processing copy is deleted after analysis.
 
-### Stage 2 visual analysis
+### Visual-only analysis
 
-Stage 2 accepts MP4 files from 10 seconds to 10 minutes and up to 100 MB:
+Use this when you only want the video analysis:
 
 ```powershell
 python video_to_visual_json.py "Videos\01.Video.mp4"
 ```
 
-Choose the report location:
+To choose the output file:
 
 ```powershell
 python -m app.vision_cli "Videos\01.Video.mp4" --output "jsons\stage2-visual-report.json"
 ```
 
-The source MP4 is preserved; its temporary processing copy is always deleted after analysis.
+The source MP4 is preserved. The temporary processing copy is deleted after analysis.
 
 ## Report contents
 
-- Transcript and word timestamps
-- WER, CER, missing, inserted, and substituted words
-- Pronunciation-style accuracy score
-- Faster Whisper word confidence and low-confidence words
-- Words per minute and rate category
-- Long pauses and filler pauses
-- Filler expressions and repeated words/phrases
-- Fluency and speech-only interview communication scores
-- Face presence, eye-contact estimate, face direction, looking-away events, and head stability
-- Visual communication and combined interview readiness scores
-- Transcript sentiment and basic facial-expression estimates
-- Rule-based improvement feedback and limitations
+The final report can include:
 
-The combined interview readiness score weights speech communication at 75% and visual communication
-at 25%. The visual score uses the eye-contact estimate, face presence, and head stability.
+- Transcript and word timestamps
+- WER and CER
+- Missing, inserted, and substituted words
+- Pronunciation-style accuracy score
+- Word confidence and low-confidence words
+- Words per minute and speech-rate category
+- Long pauses and filler pauses
+- Repeated words or phrases
+- Fluency and interview communication scores
+- Face presence, eye-contact estimate, face direction, looking-away events, and head stability
+- Visual communication and combined interview-readiness scores
+- Transcript sentiment and facial-expression estimates
+- Rule-based feedback and limitations
+
+The combined interview-readiness score gives more weight to speech than visual cues:
+
+- Speech communication: 75%
+- Visual communication: 25%
 
 ## Data handling
 
-- Uploaded browser files, extracted MP3 files, and internal processing copies are deleted immediately.
-- JSON reports remain in `Data/reports/` unless another output path is selected.
-- Summary history remains in `Data/history/analysis_history.csv`.
-- Audio, video, report, and history directories are excluded from Git.
+- Uploaded browser files are removed after processing
+- Temporary audio extraction files are removed after processing
+- JSON reports are saved in `Data/reports/` unless you choose another path
+- CSV history is saved in `Data/history/analysis_history.csv`
+- Runtime upload, report, and history folders are ignored by Git
+
+## Project structure
+
+```text
+app/                       Core analysis services and CLI entry points
+backend/server.js          Express API for the React front end
+frontend/                  React client
+tests/                     Unit tests
+sample_outputs/            Example report schemas
+Data/                      Runtime uploads, reports, and history
+DEPLOYMENT.md              Local and hosted deployment guidance
+```
 
 ## Tests
 
@@ -181,44 +234,17 @@ npm.cmd run test:api
 npm.cmd run build
 ```
 
-## Project structure
-
-```text
-app/                       Analysis services and CLI entry points
-dashboard/streamlit_app.py Streamlit dashboard
-tests/                     Unit tests
-sample_outputs/            Compact example report schemas
-Data/                      Runtime uploads, reports, and history
-DEPLOYMENT.md              Local and hosted deployment guidance
-```
-
-## Architecture decision
-
-This MVP is Streamlit-only, as selected during planning. It does not expose a FastAPI service. Heavy
-audio/video processing is local-first; see `DEPLOYMENT.md` for hosting limitations.
-
-Production-oriented safeguards included in the local architecture:
-
-- Environment-variable configuration with documented defaults in `.env.example`
-- Separate transcription, NLP, vision, scoring, persistence, and orchestration services
-- Dependency injection for reusable cached model instances and test doubles
-- Atomic JSON report writes to prevent partial files
-- Thread-safe CSV writes with automatic history schema migration
-- Versioned combined report schema and processing metadata
-- Strict upload type, size, duration, and expected-text validation
-- Guaranteed temporary-media cleanup through context managers
-
-## Known limitations
+## Limitations
 
 - Transcript comparison is not phoneme-level pronunciation assessment.
-- Model probability is not a clinical confidence or pronunciation measurement.
-- Repetition detection identifies repeated text patterns and does not diagnose stuttering.
+- Model confidence is not a clinical measure.
+- Repetition detection finds repeated text patterns and does not diagnose stuttering.
 - Eye contact and face direction are camera-based estimates, not exact gaze tracking.
 - Sentiment describes transcript language, not the speaker's true mood or intent.
-- Facial-expression categories are geometry heuristics, not reliable emotion recognition.
-- Lighting, glasses, occlusion, camera placement, and model transcription errors affect results.
+- Facial-expression categories are simple geometry heuristics, not reliable emotion recognition.
+- Lighting, glasses, occlusion, camera placement, and transcription errors affect results.
 - Emotion detection is intentionally excluded.
 
 ## Status
 
-Stages 1, 2, and 3 are implemented for local MVP testing.
+Stages 1, 2, and 3 are implemented for local MVP testing with the React UI as the supported browser interface.
