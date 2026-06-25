@@ -13,7 +13,12 @@ async function withServer(run) {
 test("health reports API availability", async () => withServer(async (base) => {
   const response = await fetch(`${base}/api/health`);
   assert.equal(response.status, 200);
-  assert.deepEqual(await response.json(), { status: "ok", analysisAvailable: true });
+  const body = await response.json();
+  assert.equal(body.status, "ok");
+  assert.equal(body.analysisAvailable, true);
+  assert.equal(body.analysisRunning, false);
+  assert.equal(body.analysisRuntimeSeconds, 0);
+  assert.equal(body.rateLimit.limit > 0, true);
 }));
 
 test("analysis rejects a missing upload explicitly", async () => withServer(async (base) => {

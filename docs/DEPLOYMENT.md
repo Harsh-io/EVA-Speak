@@ -31,6 +31,17 @@ Set this environment variable on Render after you know the Vercel URL:
 EVA_ALLOWED_ORIGINS=https://your-vercel-app.vercel.app
 ```
 
+For demo-friendly rate limiting, also set:
+
+```text
+EVA_RATE_LIMIT=20
+EVA_RATE_WINDOW_MS=600000
+EVA_ANALYSIS_TIMEOUT_MS=300000
+```
+
+If these variables already exist in the Render dashboard, update them there and
+redeploy. Existing dashboard values can override `render.yaml`.
+
 The backend health endpoint is:
 
 ```text

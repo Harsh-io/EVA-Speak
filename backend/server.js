@@ -24,7 +24,25 @@ const upload = multer({
 const python = process.env.EVA_PYTHON
   || (process.platform === "win32" ? path.join(root, ".venv", "Scripts", "python.exe") : "python3");
 let analysisRunning = false;
+let analysisStartedAt = null;
 let lastSuccessfulReport = null;
+const rateLimitWindowMs = Number(process.env.EVA_RATE_WINDOW_MS || 10 * 60 * 1000);
+const rateLimitLimit = Number(process.env.EVA_RATE_LIMIT || 20);
+const analysisLimiter = rateLimit({
+  windowMs: rateLimitWindowMs,
+  limit: rateLimitLimit,
+  standardHeaders: "draft-8",
+  legacyHeaders: false,
+  skipFailedRequests: true,
+  message: (_req, res) => {
+    const retryAfter = Number(res.getHeader("Retry-After") || 0);
+    return {
+      error: `Rate limit reached. Wait ${retryAfter || Math.ceil(rateLimitWindowMs / 1000)} seconds before starting another analysis.`,
+      code: "RATE_LIMITED",
+      retryAfterSeconds: retryAfter || Math.ceil(rateLimitWindowMs / 1000),
+    };
+  },
+});
 
 function runAnalysis(videoPath, expectedText) {
   return new Promise((resolve, reject) => {
@@ -39,6 +57,7 @@ function runAnalysis(videoPath, expectedText) {
 
 export function createApp(analyze = runAnalysis) {
   const app = express();
+  app.set("trust proxy", 1);
   const allowedOrigins = String(process.env.EVA_ALLOWED_ORIGINS || "")
     .split(",")
     .map((origin) => origin.trim())
@@ -58,13 +77,17 @@ export function createApp(analyze = runAnalysis) {
     return next();
   });
   app.use(express.json({ limit: "32kb" }));
-  app.use("/api/analyze", rateLimit({
-    windowMs: Number(process.env.EVA_RATE_WINDOW_MS || 15 * 60 * 1000),
-    limit: Number(process.env.EVA_RATE_LIMIT || 5), standardHeaders: "draft-8", legacyHeaders: false,
-    message: { error: "Rate limit reached. Wait before starting another analysis.", code: "RATE_LIMITED" },
+  app.get("/api/health", (_req, res) => res.json({
+    status: "ok",
+    analysisAvailable: !analysisRunning,
+    analysisRunning,
+    analysisStartedAt,
+    analysisRuntimeSeconds: analysisStartedAt
+      ? Math.round((Date.now() - Date.parse(analysisStartedAt)) / 1000)
+      : 0,
+    rateLimit: { limit: rateLimitLimit, windowMs: rateLimitWindowMs },
   }));
-  app.get("/api/health", (_req, res) => res.json({ status: "ok", analysisAvailable: !analysisRunning }));
-  app.post("/api/analyze/full", upload.single("video"), async (req, res) => {
+  app.post("/api/analyze/full", analysisLimiter, upload.single("video"), async (req, res) => {
     const uploadedPath = req.file?.path;
     try {
       if (!req.file) return res.status(400).json({ error: "An MP4 video is required.", code: "INVALID_INPUT" });
@@ -75,8 +98,20 @@ export function createApp(analyze = runAnalysis) {
       console.info("Detected extension:", path.extname(req.file.path).toLowerCase());
       const expectedText = String(req.body.expectedText || "").trim();
       if (!expectedText || expectedText.length > 5000) return res.status(400).json({ error: "Expected text must contain 1 to 5000 characters.", code: "INVALID_INPUT" });
-      if (analysisRunning) return res.status(503).json({ error: "An analysis is already running. Try again shortly.", code: "ANALYSIS_BUSY" });
+      if (analysisRunning) {
+        const runtimeSeconds = analysisStartedAt
+          ? Math.round((Date.now() - Date.parse(analysisStartedAt)) / 1000)
+          : 0;
+        return res.status(503).json({
+          error: `An analysis is already running (${runtimeSeconds}s elapsed). Try again after it finishes.`,
+          code: "ANALYSIS_BUSY",
+          retryAfterSeconds: 30,
+          analysisStartedAt,
+          analysisRuntimeSeconds: runtimeSeconds,
+        });
+      }
       analysisRunning = true;
+      analysisStartedAt = new Date().toISOString();
       try {
         const report = await analyze(uploadedPath, expectedText);
         lastSuccessfulReport = report;
@@ -86,7 +121,10 @@ export function createApp(analyze = runAnalysis) {
           return res.status(206).json({ report: lastSuccessfulReport, degraded: true, warning: `Live analysis failed; returning the last successful report. ${error.message}` });
         }
         return res.status(502).json({ error: error.message, code: "ANALYSIS_FAILED", fallbackAvailable: Boolean(lastSuccessfulReport) });
-      } finally { analysisRunning = false; }
+      } finally {
+        analysisRunning = false;
+        analysisStartedAt = null;
+      }
     } finally { if (uploadedPath) await rm(uploadedPath, { force: true }); }
   });
   app.get("/api/reports/:id", async (req, res) => {

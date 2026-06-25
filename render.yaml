@@ -9,10 +9,10 @@ services:
       - key: EVA_MODEL_SIZE
         value: tiny.en
       - key: EVA_ANALYSIS_TIMEOUT_MS
-        value: "900000"
+        value: "300000"
       - key: EVA_RATE_LIMIT
-        value: "5"
+        value: "20"
       - key: EVA_RATE_WINDOW_MS
-        value: "900000"
+        value: "600000"
       - key: EVA_ALLOWED_ORIGINS
         value: https://your-vercel-app.vercel.app

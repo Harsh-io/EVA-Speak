@@ -366,11 +366,12 @@ function App() {
   const [status, setStatus] = useState("");
   const [fallback, setFallback] = useState(false);
   const [duration, setDuration] = useState(null);
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
 
   const videoUrl = useMemo(() => (file ? URL.createObjectURL(file) : null), [file]);
   const isMp4 = file ? file.name.toLowerCase().endsWith(".mp4") : false;
   const isTooLarge = file ? file.size > maxFileSizeBytes : false;
-  const canAnalyze = Boolean(file && isMp4 && !isTooLarge && text.trim());
+  const canAnalyze = Boolean(file && isMp4 && !isTooLarge && text.trim() && !isAnalyzing);
 
   useEffect(() => () => {
     if (videoUrl) URL.revokeObjectURL(videoUrl);
@@ -395,6 +396,7 @@ function App() {
   async function submit(event) {
     event.preventDefault();
     if (!canAnalyze) return;
+    setIsAnalyzing(true);
     setStatus("Analyzing speech and video. This can take several minutes...");
     setReport(null);
     const body = new FormData();
@@ -407,12 +409,17 @@ function App() {
       });
       const data = await response.json();
       if (!response.ok && response.status !== 206) {
-        throw new Error(data.error || "Analysis failed.");
+        const retryText = data.retryAfterSeconds
+          ? ` Try again in about ${data.retryAfterSeconds} seconds.`
+          : "";
+        throw new Error(`${data.error || "Analysis failed."}${retryText}`);
       }
       setReport(data.report);
       setStatus(data.degraded ? data.warning : "Analysis complete.");
     } catch (error) {
       setStatus(error.message);
+    } finally {
+      setIsAnalyzing(false);
     }
   }
 
@@ -479,7 +486,7 @@ function App() {
           {file && isTooLarge && <p className="warning">Video exceeds the 100 MB upload limit.</p>}
           {!text.trim() && <p className="warning">Enter expected text before starting analysis.</p>}
 
-          <button disabled={!canAnalyze}>Analyze communication</button>
+          <button disabled={!canAnalyze}>{isAnalyzing ? "Analyzing..." : "Analyze communication"}</button>
         </form>
         {status && <p className="status" role="status">{status}</p>}
       </section>
