@@ -1,7 +1,13 @@
 from pathlib import Path
 from typing import Any
 
-from app.config import MODEL_COMPUTE_TYPE, MODEL_DEVICE, MODEL_SIZE
+from app.config import (
+    MODEL_COMPUTE_TYPE,
+    MODEL_DEVICE,
+    MODEL_SIZE,
+    WHISPER_BEAM_SIZE,
+    WHISPER_VAD_FILTER,
+)
 
 
 class FasterWhisperTranscriber:
@@ -32,8 +38,8 @@ class FasterWhisperTranscriber:
             str(audio_path),
             language="en",
             task="transcribe",
-            beam_size=5,
-            vad_filter=True,
+            beam_size=WHISPER_BEAM_SIZE,
+            vad_filter=WHISPER_VAD_FILTER,
             word_timestamps=True,
             condition_on_previous_text=False,
         )

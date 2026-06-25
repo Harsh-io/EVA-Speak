@@ -36,7 +36,12 @@ For demo-friendly rate limiting, also set:
 ```text
 EVA_RATE_LIMIT=20
 EVA_RATE_WINDOW_MS=600000
-EVA_ANALYSIS_TIMEOUT_MS=300000
+EVA_ANALYSIS_TIMEOUT_MS=900000
+EVA_WHISPER_BEAM_SIZE=1
+EVA_WHISPER_VAD_FILTER=false
+EVA_VISION_SAMPLE_FPS=0.5
+EVA_VISION_MAX_WIDTH=480
+EVA_VISION_REFINE_LANDMARKS=false
 ```
 
 Optional but recommended if Hugging Face downloads are slow or rate-limited:

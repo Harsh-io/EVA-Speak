@@ -12,6 +12,8 @@ from app.config import (
     FACE_YAW_THRESHOLD_DEGREES,
     LOOKING_AWAY_MIN_CONSECUTIVE_FRAMES,
     PROJECT_ROOT,
+    VISION_MAX_WIDTH,
+    VISION_REFINE_LANDMARKS,
     VISION_SAMPLE_FPS,
 )
 
@@ -127,9 +129,16 @@ def calculate_head_stability(poses: list[tuple[float, float]]) -> int:
 
 
 class MediaPipeVisionAnalyzer:
-    def __init__(self, sample_fps: float = VISION_SAMPLE_FPS) -> None:
+    def __init__(
+        self,
+        sample_fps: float = VISION_SAMPLE_FPS,
+        max_width: int = VISION_MAX_WIDTH,
+        refine_landmarks: bool = VISION_REFINE_LANDMARKS,
+    ) -> None:
         if sample_fps <= 0:
             raise ValueError("Vision sample FPS must be greater than zero.")
+        if max_width <= 0:
+            raise ValueError("Vision max width must be greater than zero.")
         matplotlib_cache = PROJECT_ROOT / "Data" / ".matplotlib"
         matplotlib_cache.mkdir(parents=True, exist_ok=True)
         os.environ.setdefault("MPLCONFIGDIR", str(matplotlib_cache))
@@ -153,6 +162,8 @@ class MediaPipeVisionAnalyzer:
         self.np = np
         self.face_mesh_module = face_mesh_module
         self.sample_fps = sample_fps
+        self.max_width = max_width
+        self.refine_landmarks = refine_landmarks
 
     def _estimate_head_pose(
         self, landmarks: Any, width: int, height: int
@@ -210,7 +221,7 @@ class MediaPipeVisionAnalyzer:
             with self.face_mesh_module.FaceMesh(
                 static_image_mode=False,
                 max_num_faces=1,
-                refine_landmarks=True,
+                refine_landmarks=self.refine_landmarks,
                 min_detection_confidence=0.5,
                 min_tracking_confidence=0.5,
             ) as face_mesh:
@@ -223,6 +234,13 @@ class MediaPipeVisionAnalyzer:
                         continue
 
                     timestamp = frame_index / source_fps
+                    if frame.shape[1] > self.max_width:
+                        scale = self.max_width / frame.shape[1]
+                        frame = self.cv2.resize(
+                            frame,
+                            (self.max_width, round(frame.shape[0] * scale)),
+                            interpolation=self.cv2.INTER_AREA,
+                        )
                     rgb_frame = self.cv2.cvtColor(frame, self.cv2.COLOR_BGR2RGB)
                     result = face_mesh.process(rgb_frame)
                     frame_sample: dict[str, Any] = {
@@ -284,6 +302,7 @@ class MediaPipeVisionAnalyzer:
             "duration_seconds": round(duration_seconds, 3),
             "source_fps": round(source_fps, 3),
             "sample_fps": round(effective_sample_fps, 3),
+            "max_frame_width": self.max_width,
             "processed_frames": processed_frames,
             "face_detected_frames": face_frames,
             "face_detected_ratio": round(face_frames / processed_frames, 4),
