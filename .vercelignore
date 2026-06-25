@@ -1,0 +1,12 @@
+backend/
+app/
+requirements.txt
+Dockerfile
+render.yaml
+tests/
+.pytest_cache/
+.venv/
+Data/
+docs/
+dashboard/
+*.py
