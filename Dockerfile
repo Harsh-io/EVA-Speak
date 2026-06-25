@@ -2,6 +2,9 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
+ENV HF_HOME=/app/.cache/huggingface
+ENV XDG_CACHE_HOME=/app/.cache
+
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         ca-certificates \
@@ -20,6 +23,8 @@ RUN python -m pip install --no-cache-dir --upgrade pip \
 
 COPY app ./app
 COPY backend ./backend
+
+RUN python -c "from faster_whisper import WhisperModel; WhisperModel('tiny.en', device='cpu', compute_type='int8')"
 
 ENV EVA_MODEL_SIZE=tiny.en
 ENV PORT=10000

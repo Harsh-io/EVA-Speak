@@ -44,12 +44,41 @@ const analysisLimiter = rateLimit({
   },
 });
 
+function stripAnsi(value) {
+  return String(value || "").replace(/\u001b\[[0-9;]*m/g, "");
+}
+
+function userFacingAnalysisError(error, stdout, stderr) {
+  const combinedOutput = stripAnsi(`${stderr || ""}\n${stdout || ""}`);
+  const meaningfulLines = combinedOutput
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .filter((line) => !line.includes("You are sending unauthenticated requests to the HF Hub"))
+    .filter((line) => !line.includes("[W:onnxruntime:"))
+    .filter((line) => !line.includes("/sys/class/drm/card0"));
+
+  for (const line of meaningfulLines) {
+    try {
+      const parsed = JSON.parse(line);
+      if (parsed?.error) return parsed.error;
+    } catch {
+      // Keep looking for a machine-readable error line.
+    }
+  }
+
+  if (error?.killed || error?.signal === "SIGTERM") {
+    return "Analysis timed out on the hosted server. Try a shorter video or upgrade the Render instance.";
+  }
+  return meaningfulLines.join("\n") || error?.message || "Analysis failed.";
+}
+
 function runAnalysis(videoPath, expectedText) {
   return new Promise((resolve, reject) => {
     execFile(python, ["-m", "app.api_bridge", videoPath, "--expected-text", expectedText], {
       cwd: root, timeout: Number(process.env.EVA_ANALYSIS_TIMEOUT_MS || 900000), maxBuffer: 20 * 1024 * 1024,
     }, (error, stdout, stderr) => {
-      if (error) return reject(new Error(stderr.trim() || error.message));
+      if (error) return reject(new Error(userFacingAnalysisError(error, stdout, stderr)));
       try { resolve(JSON.parse(stdout)); } catch { reject(new Error("Analysis returned an invalid response.")); }
     });
   });
@@ -141,6 +170,8 @@ export function createApp(analyze = runAnalysis) {
   });
   return app;
 }
+
+export { userFacingAnalysisError };
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const port = Number(process.env.PORT || 3001);

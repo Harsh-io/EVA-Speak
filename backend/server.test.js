@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { once } from "node:events";
 import test from "node:test";
-import { createApp } from "./server.js";
+import { createApp, userFacingAnalysisError } from "./server.js";
 
 async function withServer(run) {
   const server = createApp(async () => { throw new Error("should not run"); }).listen(0);
@@ -57,3 +57,16 @@ test("report ids cannot traverse the report directory", async () => withServer(a
   const response = await fetch(`${base}/api/reports/..%2Fsecret`);
   assert.equal(response.status, 400);
 }));
+
+test("analysis errors hide benign model runtime warnings", () => {
+  const stderr = [
+    "Warning: You are sending unauthenticated requests to the HF Hub.",
+    "\u001b[0;93m2026-06-25 [W:onnxruntime:Default] Failed to detect devices under \"/sys/class/drm/card0\"",
+  ].join("\n");
+  const error = new Error("Command failed");
+  error.killed = true;
+  assert.equal(
+    userFacingAnalysisError(error, "", stderr),
+    "Analysis timed out on the hosted server. Try a shorter video or upgrade the Render instance.",
+  );
+});

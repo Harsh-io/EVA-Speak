@@ -39,6 +39,12 @@ EVA_RATE_WINDOW_MS=600000
 EVA_ANALYSIS_TIMEOUT_MS=300000
 ```
 
+Optional but recommended if Hugging Face downloads are slow or rate-limited:
+
+```text
+HF_TOKEN=your_hugging_face_token
+```
+
 If these variables already exist in the Render dashboard, update them there and
 redeploy. Existing dashboard values can override `render.yaml`.
 
