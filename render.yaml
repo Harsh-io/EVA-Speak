@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: eva-speak-api
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: EVA_MODEL_SIZE
+        value: tiny.en
+      - key: EVA_ANALYSIS_TIMEOUT_MS
+        value: "900000"
+      - key: EVA_RATE_LIMIT
+        value: "5"
+      - key: EVA_RATE_WINDOW_MS
+        value: "900000"
+      - key: EVA_ALLOWED_ORIGINS
+        value: https://your-vercel-app.vercel.app
