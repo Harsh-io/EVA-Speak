@@ -26,6 +26,8 @@ const python = process.env.EVA_PYTHON
 let analysisRunning = false;
 let analysisStartedAt = null;
 let lastSuccessfulReport = null;
+const jobs = new Map();
+const jobTtlMs = Number(process.env.EVA_JOB_TTL_MS || 30 * 60 * 1000);
 const rateLimitWindowMs = Number(process.env.EVA_RATE_WINDOW_MS || 10 * 60 * 1000);
 const rateLimitLimit = Number(process.env.EVA_RATE_LIMIT || 20);
 const analysisLimiter = rateLimit({
@@ -73,6 +75,21 @@ function userFacingAnalysisError(error, stdout, stderr) {
   return meaningfulLines.join("\n") || error?.message || "Analysis failed.";
 }
 
+function isAllowedOrigin(origin, allowedOrigins) {
+  if (!origin) return false;
+  if (allowedOrigins.includes("*") || allowedOrigins.includes(origin)) return true;
+  try {
+    const url = new URL(origin);
+    return (
+      url.protocol === "https:"
+      && url.hostname.endsWith(".vercel.app")
+      && (url.hostname === "eva-speak.vercel.app" || url.hostname.startsWith("eva-speak-"))
+    );
+  } catch {
+    return false;
+  }
+}
+
 function runAnalysis(videoPath, expectedText) {
   return new Promise((resolve, reject) => {
     execFile(python, ["-m", "app.api_bridge", videoPath, "--expected-text", expectedText], {
@@ -93,9 +110,7 @@ export function createApp(analyze = runAnalysis) {
     .filter(Boolean);
   app.use((req, res, next) => {
     const origin = req.headers.origin;
-    const originAllowed = origin && (
-      allowedOrigins.includes("*") || allowedOrigins.includes(origin)
-    );
+    const originAllowed = isAllowedOrigin(origin, allowedOrigins);
     if (originAllowed) {
       res.setHeader("Access-Control-Allow-Origin", origin);
       res.setHeader("Vary", "Origin");
@@ -116,45 +131,126 @@ export function createApp(analyze = runAnalysis) {
       : 0,
     rateLimit: { limit: rateLimitLimit, windowMs: rateLimitWindowMs },
   }));
-  app.post("/api/analyze/full", analysisLimiter, upload.single("video"), async (req, res) => {
-    const uploadedPath = req.file?.path;
-    try {
-      if (!req.file) return res.status(400).json({ error: "An MP4 video is required.", code: "INVALID_INPUT" });
-      if (path.extname(req.file.originalname).toLowerCase() !== ".mp4") return res.status(400).json({ error: "Only MP4 videos are supported.", code: "INVALID_INPUT" });
-      console.info("Uploaded file:", req.file.originalname);
-      console.info("Saved file:", req.file.filename);
-      console.info("Stage 2 will receive:", path.resolve(req.file.path));
-      console.info("Detected extension:", path.extname(req.file.path).toLowerCase());
-      const expectedText = String(req.body.expectedText || "").trim();
-      if (!expectedText || expectedText.length > 5000) return res.status(400).json({ error: "Expected text must contain 1 to 5000 characters.", code: "INVALID_INPUT" });
-      if (analysisRunning) {
-        const runtimeSeconds = analysisStartedAt
-          ? Math.round((Date.now() - Date.parse(analysisStartedAt)) / 1000)
-          : 0;
-        return res.status(503).json({
-          error: `An analysis is already running (${runtimeSeconds}s elapsed). Try again after it finishes.`,
-          code: "ANALYSIS_BUSY",
-          retryAfterSeconds: 30,
-          analysisStartedAt,
-          analysisRuntimeSeconds: runtimeSeconds,
-        });
-      }
-      analysisRunning = true;
-      analysisStartedAt = new Date().toISOString();
-      try {
+
+  function rememberJob(job) {
+    jobs.set(job.id, job);
+    setTimeout(() => jobs.delete(job.id), jobTtlMs).unref?.();
+  }
+
+  function startAnalysisJob({ uploadedPath, inputFile, expectedText, useFallback }) {
+    const job = {
+      id: randomUUID(),
+      status: "running",
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+      inputFile,
+      error: null,
+      report: null,
+      degraded: false,
+      warning: null,
+    };
+    rememberJob(job);
+
+    analysisRunning = true;
+    analysisStartedAt = new Date().toISOString();
+    Promise.resolve()
+      .then(async () => {
         const report = await analyze(uploadedPath, expectedText);
         lastSuccessfulReport = report;
-        return res.json({ report, degraded: false });
-      } catch (error) {
-        if (req.query.fallback === "last" && lastSuccessfulReport) {
-          return res.status(206).json({ report: lastSuccessfulReport, degraded: true, warning: `Live analysis failed; returning the last successful report. ${error.message}` });
+        job.status = "complete";
+        job.report = report;
+      })
+      .catch((error) => {
+        if (useFallback && lastSuccessfulReport) {
+          job.status = "complete";
+          job.report = lastSuccessfulReport;
+          job.degraded = true;
+          job.warning = `Live analysis failed; returning the last successful report. ${error.message}`;
+          return;
         }
-        return res.status(502).json({ error: error.message, code: "ANALYSIS_FAILED", fallbackAvailable: Boolean(lastSuccessfulReport) });
-      } finally {
+        job.status = "failed";
+        job.error = error.message || "Analysis failed.";
+      })
+      .finally(async () => {
+        job.updatedAt = new Date().toISOString();
         analysisRunning = false;
         analysisStartedAt = null;
-      }
-    } finally { if (uploadedPath) await rm(uploadedPath, { force: true }); }
+        await rm(uploadedPath, { force: true });
+      });
+    return job;
+  }
+
+  app.post("/api/analyze/full", analysisLimiter, upload.single("video"), async (req, res) => {
+    const uploadedPath = req.file?.path;
+    if (!req.file) return res.status(400).json({ error: "An MP4 video is required.", code: "INVALID_INPUT" });
+    if (path.extname(req.file.originalname).toLowerCase() !== ".mp4") {
+      await rm(uploadedPath, { force: true });
+      return res.status(400).json({ error: "Only MP4 videos are supported.", code: "INVALID_INPUT" });
+    }
+    console.info("Uploaded file:", req.file.originalname);
+    console.info("Saved file:", req.file.filename);
+    console.info("Stage 2 will receive:", path.resolve(req.file.path));
+    console.info("Detected extension:", path.extname(req.file.path).toLowerCase());
+    const expectedText = String(req.body.expectedText || "").trim();
+    if (!expectedText || expectedText.length > 5000) {
+      await rm(uploadedPath, { force: true });
+      return res.status(400).json({ error: "Expected text must contain 1 to 5000 characters.", code: "INVALID_INPUT" });
+    }
+    if (analysisRunning) {
+      await rm(uploadedPath, { force: true });
+      const runtimeSeconds = analysisStartedAt
+        ? Math.round((Date.now() - Date.parse(analysisStartedAt)) / 1000)
+        : 0;
+      return res.status(503).json({
+        error: `An analysis is already running (${runtimeSeconds}s elapsed). Try again after it finishes.`,
+        code: "ANALYSIS_BUSY",
+        retryAfterSeconds: 30,
+        analysisStartedAt,
+        analysisRuntimeSeconds: runtimeSeconds,
+      });
+    }
+    const job = startAnalysisJob({
+      uploadedPath,
+      inputFile: req.file.originalname,
+      expectedText,
+      useFallback: req.query.fallback === "last",
+    });
+    return res.status(202).json({
+      jobId: job.id,
+      status: job.status,
+      statusUrl: `/api/jobs/${job.id}`,
+      message: "Analysis started. Poll the job status for results.",
+    });
+  });
+  app.get("/api/jobs/:id", (req, res) => {
+    if (!/^[a-f0-9-]{36}$/i.test(req.params.id)) return res.status(400).json({ error: "Invalid job id." });
+    const job = jobs.get(req.params.id);
+    if (!job) return res.status(404).json({ error: "Job not found.", code: "JOB_NOT_FOUND" });
+    if (job.status === "running") {
+      return res.status(202).json({
+        jobId: job.id,
+        status: job.status,
+        createdAt: job.createdAt,
+        updatedAt: job.updatedAt,
+        retryAfterSeconds: 3,
+      });
+    }
+    if (job.status === "failed") {
+      return res.status(500).json({
+        jobId: job.id,
+        status: job.status,
+        error: job.error,
+        code: "ANALYSIS_FAILED",
+        fallbackAvailable: Boolean(lastSuccessfulReport),
+      });
+    }
+    return res.json({
+      jobId: job.id,
+      status: job.status,
+      report: job.report,
+      degraded: job.degraded,
+      warning: job.warning,
+    });
   });
   app.get("/api/reports/:id", async (req, res) => {
     if (!/^[a-f0-9-]{36}$/i.test(req.params.id)) return res.status(400).json({ error: "Invalid report id." });
@@ -171,7 +267,7 @@ export function createApp(analyze = runAnalysis) {
   return app;
 }
 
-export { userFacingAnalysisError };
+export { isAllowedOrigin, userFacingAnalysisError };
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const port = Number(process.env.PORT || 3001);

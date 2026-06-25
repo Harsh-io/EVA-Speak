@@ -29,6 +29,10 @@ function formatDuration(seconds) {
   return Number.isFinite(seconds) ? `${seconds.toFixed(1)} seconds` : "Unavailable";
 }
 
+function wait(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 function Metric({ label, value }) {
   return (
     <div className="metric">
@@ -414,13 +418,43 @@ function App() {
           : "";
         throw new Error(`${data.error || "Analysis failed."}${retryText}`);
       }
-      setReport(data.report);
-      setStatus(data.degraded ? data.warning : "Analysis complete.");
+      if (response.status === 202 && data.jobId) {
+        setStatus("Analysis started on the server. Waiting for results...");
+        await pollJob(data.jobId);
+      } else {
+        setReport(data.report);
+        setStatus(data.degraded ? data.warning : "Analysis complete.");
+      }
     } catch (error) {
-      setStatus(error.message);
+      const message = error.message === "Failed to fetch"
+        ? "Could not reach the analysis API. Check Render is awake and that this Vercel URL is allowed in CORS."
+        : error.message;
+      setStatus(message);
     } finally {
       setIsAnalyzing(false);
     }
+  }
+
+  async function pollJob(jobId) {
+    const startedAt = Date.now();
+    const maxWaitMs = 8 * 60 * 1000;
+    while (Date.now() - startedAt < maxWaitMs) {
+      await wait(3000);
+      const response = await fetch(`${apiBaseUrl}/api/jobs/${jobId}`);
+      const data = await response.json();
+      if (response.status === 202) {
+        const elapsed = Math.round((Date.now() - startedAt) / 1000);
+        setStatus(`Analysis is still running on the server (${elapsed}s elapsed)...`);
+        continue;
+      }
+      if (!response.ok) {
+        throw new Error(data.error || "Analysis failed.");
+      }
+      setReport(data.report);
+      setStatus(data.degraded ? data.warning : "Analysis complete.");
+      return;
+    }
+    throw new Error("Analysis is taking too long on the hosted server. Try a shorter video or check Render logs.");
   }
 
   return (
