@@ -1,6 +1,7 @@
 // Auth routes — Google OAuth 2.0 flow
 import { Router } from 'express';
 import { handleGoogleCallback, signToken, setAuthCookie, clearAuthCookie, requireAuth } from '../middleware/auth.js';
+import User from '../models/User.js';
 
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID || '';
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET || '';
@@ -67,6 +68,101 @@ router.get('/google/callback', async (req, res) => {
   } catch (err) {
     console.error('Google OAuth callback error:', err);
     res.redirect(`${FRONTEND_URL}?error=auth_failed`);
+  }
+});
+
+// Register with email + password
+router.post('/register', async (req, res) => {
+  const { name, email, password } = req.body;
+  if (!email || !password) {
+    return res.status(400).json({ error: 'Email and password are required.', code: 'INVALID_INPUT' });
+  }
+  if (!name || name.trim().length < 1) {
+    return res.status(400).json({ error: 'Name is required.', code: 'INVALID_INPUT' });
+  }
+  if (password.length < 8) {
+    return res.status(400).json({ error: 'Password must be at least 8 characters.', code: 'INVALID_INPUT' });
+  }
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return res.status(400).json({ error: 'Invalid email format.', code: 'INVALID_INPUT' });
+  }
+
+  try {
+    const existing = await User.findOne({ email: email.toLowerCase() });
+    if (existing) {
+      return res.status(409).json({ error: 'An account with this email already exists.', code: 'EMAIL_EXISTS' });
+    }
+
+    const bcrypt = await import('bcryptjs');
+    const passwordHash = await bcrypt.default.hash(password, 12);
+
+    const user = await User.create({
+      email: email.toLowerCase(),
+      name: name.trim(),
+      passwordHash,
+      authProvider: 'email',
+      lastLoginAt: new Date(),
+    });
+
+    const token = signToken(user._id.toString());
+    setAuthCookie(res, token);
+
+    res.status(201).json({
+      user: {
+        id: user._id,
+        name: user.name,
+        email: user.email,
+        picture: user.picture,
+        createdAt: user.createdAt,
+      },
+    });
+  } catch (err) {
+    console.error('Registration error:', err);
+    if (err.code === 11000) {
+      return res.status(409).json({ error: 'An account with this email already exists.', code: 'EMAIL_EXISTS' });
+    }
+    res.status(500).json({ error: 'Registration failed.', code: 'SERVER_ERROR' });
+  }
+});
+
+// Login with email + password
+router.post('/login', async (req, res) => {
+  const { email, password } = req.body;
+  if (!email || !password) {
+    return res.status(400).json({ error: 'Email and password are required.', code: 'INVALID_INPUT' });
+  }
+
+  try {
+    const user = await User.findOne({ email: email.toLowerCase() });
+    if (!user || !user.passwordHash) {
+      return res.status(401).json({ error: 'Invalid email or password.', code: 'INVALID_CREDENTIALS' });
+    }
+
+    const bcrypt = await import('bcryptjs');
+    const isValid = await bcrypt.default.compare(password, user.passwordHash);
+    if (!isValid) {
+      return res.status(401).json({ error: 'Invalid email or password.', code: 'INVALID_CREDENTIALS' });
+    }
+
+    user.lastLoginAt = new Date();
+    await user.save();
+
+    const token = signToken(user._id.toString());
+    setAuthCookie(res, token);
+
+    res.json({
+      user: {
+        id: user._id,
+        name: user.name,
+        email: user.email,
+        picture: user.picture,
+        createdAt: user.createdAt,
+      },
+    });
+  } catch (err) {
+    console.error('Login error:', err);
+    res.status(500).json({ error: 'Login failed.', code: 'SERVER_ERROR' });
   }
 });
 

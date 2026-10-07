@@ -86,6 +86,7 @@ export async function handleGoogleCallback(googleProfile) {
       email,
       name: name || email.split('@')[0],
       picture: picture || '',
+      authProvider: 'google',
       lastLoginAt: new Date(),
     });
   }

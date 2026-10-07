@@ -7,7 +7,7 @@ const resumeSchema = new mongoose.Schema({
   mimeType: { type: String },
   text: { type: String, default: '' }, // Extracted plain text (populated after parsing)
   pineconeNamespace: { type: String }, // Namespace in Pinecone for this resume's vectors
-  chunkCount: { type: Number, default: 0 },
+  chunkCount: { type: Number, default: 0 }, 
   status: {
     type: String,
     enum: ['processing', 'ready', 'failed'],
