@@ -1,6 +1,6 @@
 // Auth context + Google OAuth hook for EVA Speak
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
-import { getAuthUser, logoutUser } from '../utils/api.jsx';
+import { getAuthUser, logoutUser, registerUser as apiRegister, loginWithEmail as apiLoginWithEmail } from '../utils/api.jsx';
 import { cacheClear } from '../utils/cache.jsx';
 
 const AuthContext = createContext(null);
@@ -35,6 +35,36 @@ export function AuthProvider({ children }) {
     window.location.href = `${apiBase}/api/auth/google`;
   }, []);
 
+  const loginWithEmail = useCallback(async (email, password) => {
+    setLoading(true);
+    setError(null);
+    try {
+      const data = await apiLoginWithEmail(email, password);
+      setUser(data.user || null);
+      return data;
+    } catch (err) {
+      setError(err.message || 'Login failed.');
+      throw err;
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  const register = useCallback(async (name, email, password) => {
+    setLoading(true);
+    setError(null);
+    try {
+      const data = await apiRegister(name, email, password);
+      setUser(data.user || null);
+      return data;
+    } catch (err) {
+      setError(err.message || 'Registration failed.');
+      throw err;
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
   const logout = useCallback(async () => {
     try {
       await logoutUser();
@@ -45,7 +75,7 @@ export function AuthProvider({ children }) {
     await cacheClear();
   }, []);
 
-  const value = { user, loading, error, login, logout, refreshAuth: checkAuth };
+  const value = { user, loading, error, login, loginWithEmail, register, logout, refreshAuth: checkAuth };
 
   return (
     <AuthContext.Provider value={value}>

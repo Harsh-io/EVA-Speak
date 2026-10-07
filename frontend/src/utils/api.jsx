@@ -78,10 +78,19 @@ export function logoutUser() {
   return api.post('/api/auth/logout');
 }
 
+export function registerUser(name, email, password) {
+  return api.post('/api/auth/register', { body: { name, email, password } });
+}
+
+export function loginWithEmail(email, password) {
+  return api.post('/api/auth/login', { body: { email, password } });
+}
+
 // ── Analysis endpoints ────────────────────────────────────────
 export function submitAnalysis(videoFile, expectedText, fallback = false) {
   const formData = new FormData();
-  formData.append('video', videoFile);
+  const filename = videoFile?.name || 'recording.mp4';
+  formData.append('video', videoFile, filename);
   formData.append('expectedText', expectedText);
   const qs = fallback ? '?fallback=last' : '';
   return api.post(`/api/analyze/full${qs}`, { formData });
@@ -108,7 +117,8 @@ export function generateInterviewQuestions(resumeId, count = 5) {
 
 export function submitInterviewAnswer(questionId, videoFile) {
   const formData = new FormData();
-  formData.append('video', videoFile);
+  const filename = videoFile?.name || 'interview-answer.mp4';
+  formData.append('video', videoFile, filename);
   formData.append('questionId', questionId);
   return api.post('/api/interview/submit-answer', { formData });
 }
@@ -120,7 +130,8 @@ export function getImpromptuTopic() {
 
 export function submitImpromptuSpeech(topicId, videoFile) {
   const formData = new FormData();
-  formData.append('video', videoFile);
+  const filename = videoFile?.name || 'impromptu-speech.mp4';
+  formData.append('video', videoFile, filename);
   formData.append('topicId', topicId);
   return api.post('/api/impromptu/submit', { formData });
 }
@@ -132,7 +143,8 @@ export function getVocalPassage(difficulty = 'medium') {
 
 export function submitVocalRecording(passageId, audioFile) {
   const formData = new FormData();
-  formData.append('audio', audioFile);
+  const filename = audioFile?.name || 'vocal-recording.mp4';
+  formData.append('audio', audioFile, filename);
   formData.append('passageId', passageId);
   return api.post('/api/vocal/submit', { formData });
 }
