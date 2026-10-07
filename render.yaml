@@ -6,6 +6,39 @@ services:
     dockerfilePath: ./Dockerfile
     healthCheckPath: /api/health
     envVars:
+      # ── Server ──────────────────────────────────────────────
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "10000"
+      - key: FRONTEND_URL
+        value: https://your-vercel-app.vercel.app
+      - key: EVA_ALLOWED_ORIGINS
+        value: https://your-vercel-app.vercel.app
+
+      # ── Auth ─────────────────────────────────────────────────
+      - key: GOOGLE_CLIENT_ID
+        sync: false   # Set in Render dashboard
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: GOOGLE_REDIRECT_URI
+        value: https://your-render-app.onrender.com/api/auth/google/callback
+      - key: JWT_SECRET
+        sync: false   # Set in Render dashboard (random 32-char hex)
+
+      # ── MongoDB ──────────────────────────────────────────────
+      - key: MONGODB_URI
+        sync: false   # Set in Render dashboard
+
+      # ── AI / RAG ─────────────────────────────────────────────
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: PINECONE_API_KEY
+        sync: false
+      - key: PINECONE_INDEX_NAME
+        value: eva-speak-resumes
+
+      # ── Speech Analysis (optimised for free tier) ────────────
       - key: EVA_MODEL_SIZE
         value: tiny.en
       - key: EVA_ANALYSIS_TIMEOUT_MS
@@ -14,15 +47,17 @@ services:
         value: "1"
       - key: EVA_WHISPER_VAD_FILTER
         value: "false"
+
+      # ── Vision Analysis (optimised for free tier) ────────────
       - key: EVA_VISION_SAMPLE_FPS
         value: "0.5"
       - key: EVA_VISION_MAX_WIDTH
         value: "480"
       - key: EVA_VISION_REFINE_LANDMARKS
         value: "false"
+
+      # ── Rate limiting ────────────────────────────────────────
       - key: EVA_RATE_LIMIT
         value: "20"
       - key: EVA_RATE_WINDOW_MS
         value: "600000"
-      - key: EVA_ALLOWED_ORIGINS
-        value: https://your-vercel-app.vercel.app
