@@ -1,0 +1,4470 @@
+{
+  "report_id": "0eb80bd0-20e6-4754-ab2e-00c418365b8f",
+  "created_at": "2026-06-24T15:01:26.441676+00:00",
+  "stage": 3,
+  "report_schema_version": "1.2",
+  "input_file": "3aa79cfd-958b-4491-9eed-d168f9c195eb.mp4",
+  "expected_text_mode": "user_entered",
+  "expected_text": "Good morning/afternoon, and thank you for giving me this opportunity to introduce myself. My name is Harsh Patial, and I am a final-year B.Tech student at VIT Bhopal, specializing in Computer Science with a focus on Machine Learning. I currently have a CGPA of 8.9 30-40% TIME PROJECTS Over the past two years, I have worked on projects related to Artificial Intelligence, Machine Learning, and Natural Language Processing. Some of my key projects include a RAG-based AI Teaching Assistant, where I worked with Python, LangChain, LLMs, vector search, and document processing, and EVA Speak, an AI-based speaking coach that analyzes speech, fluency, pronunciation, and visual communication using Python, Whisper, OpenCV, and MediaPipe. 10-20% Internships Alongside my projects, I have completed internships focused on AI and Generative AI technologies and am currently contributing to real-world AI projects through the AI Innovators Hub at VIT Bhopal. Career Goals = 20-25% of introduction Apart from development, I enjoy problem-solving, building useful technology, and applying Machine Learning and Data Science to solve practical problems. I enjoy learning new tools and converting ideas into working projects. I am looking for an opportunity where I can learn from experienced professionals, contribute to real-world projects, and grow as an AI/ML or Data Science professional. That is why I am excited about this opportunity. Thank you.",
+  "recognized_text": "Good morning, sir. My name is Haspartia, and I am a final ear beat X student at VIT mobile specializing in computer science with a focus on machine learning. My current CGP is 8.9. Over the past two years, I have built projects mainly around AI and ML. One of my major projects is a react based AI teaching assistant where user can interact with PDF lecture videos and web content using lp. I used python, ln, ln, vector, vector search and document processing in this project. I have also worked on ever speak an AI speaking coach that analyzes pronunciation, fluency, filler words, poses and eye contact using whisper open cg and media pipe. I have also completed internship in generative AI and enterprise technologies gaining And so let's expose the machine learning LLM from engineering Google Cloud AI services and workflow automation platform. Currently, I am contributing to VIT mobile AI innovators app where I am working on AI powered resumia optimization, blah, blah, blah, my current industrialized and problem solving machine learning, data science and building technologies that solve real-world I am looking for an opportunity where I can learn contribute and work on practical industry projects. That is why I am really excited about this role.",
+  "transcription": {
+    "engine": "faster-whisper",
+    "model": "tiny.en",
+    "language": "en",
+    "language_probability": 1,
+    "segments": [
+      {
+        "start": 0.53,
+        "end": 5.41,
+        "text": "Good morning, sir. My name is Haspartia, and I am a final ear beat X",
+        "words": [
+          {
+            "word": "Good",
+            "start": 0.53,
+            "end": 1.11,
+            "probability": 0.071
+          },
+          {
+            "word": "morning,",
+            "start": 1.11,
+            "end": 1.41,
+            "probability": 0.8995
+          },
+          {
+            "word": "sir.",
+            "start": 1.73,
+            "end": 1.85,
+            "probability": 0.95
+          },
+          {
+            "word": "My",
+            "start": 2.21,
+            "end": 2.25,
+            "probability": 0.9752
+          },
+          {
+            "word": "name",
+            "start": 2.25,
+            "end": 2.45,
+            "probability": 0.9989
+          },
+          {
+            "word": "is",
+            "start": 2.45,
+            "end": 2.63,
+            "probability": 0.9953
+          },
+          {
+            "word": "Haspartia,",
+            "start": 2.63,
+            "end": 3.11,
+            "probability": 0.4764
+          },
+          {
+            "word": "and",
+            "start": 3.33,
+            "end": 3.45,
+            "probability": 0.9687
+          },
+          {
+            "word": "I",
+            "start": 3.45,
+            "end": 3.67,
+            "probability": 0.9887
+          },
+          {
+            "word": "am",
+            "start": 3.67,
+            "end": 3.77,
+            "probability": 0.8455
+          },
+          {
+            "word": "a",
+            "start": 3.77,
+            "end": 3.97,
+            "probability": 0.986
+          },
+          {
+            "word": "final",
+            "start": 3.97,
+            "end": 4.27,
+            "probability": 0.9513
+          },
+          {
+            "word": "ear",
+            "start": 4.27,
+            "end": 4.81,
+            "probability": 0.2016
+          },
+          {
+            "word": "beat",
+            "start": 4.81,
+            "end": 5.21,
+            "probability": 0.1918
+          },
+          {
+            "word": "X",
+            "start": 5.21,
+            "end": 5.41,
+            "probability": 0.2989
+          }
+        ]
+      },
+      {
+        "start": 5.41,
+        "end": 10.33,
+        "text": "student at VIT mobile specializing in computer science with a focus on machine",
+        "words": [
+          {
+            "word": "student",
+            "start": 5.41,
+            "end": 5.77,
+            "probability": 0.0932
+          },
+          {
+            "word": "at",
+            "start": 5.77,
+            "end": 5.99,
+            "probability": 0.965
+          },
+          {
+            "word": "VIT",
+            "start": 5.99,
+            "end": 6.29,
+            "probability": 0.5066
+          },
+          {
+            "word": "mobile",
+            "start": 6.29,
+            "end": 6.79,
+            "probability": 0.6689
+          },
+          {
+            "word": "specializing",
+            "start": 6.79,
+            "end": 7.67,
+            "probability": 0.529
+          },
+          {
+            "word": "in",
+            "start": 7.67,
+            "end": 8.07,
+            "probability": 0.9696
+          },
+          {
+            "word": "computer",
+            "start": 8.07,
+            "end": 8.31,
+            "probability": 0.7332
+          },
+          {
+            "word": "science",
+            "start": 8.31,
+            "end": 9.11,
+            "probability": 0.9933
+          },
+          {
+            "word": "with",
+            "start": 9.11,
+            "end": 9.39,
+            "probability": 0.9245
+          },
+          {
+            "word": "a",
+            "start": 9.39,
+            "end": 9.57,
+            "probability": 0.9689
+          },
+          {
+            "word": "focus",
+            "start": 9.57,
+            "end": 9.83,
+            "probability": 0.9819
+          },
+          {
+            "word": "on",
+            "start": 9.83,
+            "end": 10.07,
+            "probability": 0.9959
+          },
+          {
+            "word": "machine",
+            "start": 10.07,
+            "end": 10.33,
+            "probability": 0.996
+          }
+        ]
+      },
+      {
+        "start": 10.33,
+        "end": 16.01,
+        "text": "learning. My current CGP is 8.9. Over the past two years, I have built projects",
+        "words": [
+          {
+            "word": "learning.",
+            "start": 10.33,
+            "end": 10.85,
+            "probability": 0.9942
+          },
+          {
+            "word": "My",
+            "start": 11.47,
+            "end": 11.51,
+            "probability": 0.9853
+          },
+          {
+            "word": "current",
+            "start": 11.51,
+            "end": 11.83,
+            "probability": 0.9962
+          },
+          {
+            "word": "CGP",
+            "start": 11.83,
+            "end": 12.17,
+            "probability": 0.7469
+          },
+          {
+            "word": "is",
+            "start": 12.17,
+            "end": 12.49,
+            "probability": 0.9611
+          },
+          {
+            "word": "8",
+            "start": 12.49,
+            "end": 12.69,
+            "probability": 0.9468
+          },
+          {
+            "word": ".9.",
+            "start": 12.69,
+            "end": 13.61,
+            "probability": 0.9812
+          },
+          {
+            "word": "Over",
+            "start": 13.71,
+            "end": 13.83,
+            "probability": 0.9735
+          },
+          {
+            "word": "the",
+            "start": 13.83,
+            "end": 14.05,
+            "probability": 0.9975
+          },
+          {
+            "word": "past",
+            "start": 14.05,
+            "end": 14.35,
+            "probability": 0.9514
+          },
+          {
+            "word": "two",
+            "start": 14.35,
+            "end": 14.61,
+            "probability": 0.761
+          },
+          {
+            "word": "years,",
+            "start": 14.61,
+            "end": 14.89,
+            "probability": 0.17
+          },
+          {
+            "word": "I",
+            "start": 14.89,
+            "end": 15.09,
+            "probability": 0.9979
+          },
+          {
+            "word": "have",
+            "start": 15.09,
+            "end": 15.33,
+            "probability": 0.9949
+          },
+          {
+            "word": "built",
+            "start": 15.33,
+            "end": 15.55,
+            "probability": 0.8593
+          },
+          {
+            "word": "projects",
+            "start": 15.55,
+            "end": 16.01,
+            "probability": 0.8998
+          }
+        ]
+      },
+      {
+        "start": 16.01,
+        "end": 21.27,
+        "text": "mainly around AI and ML. One of my major projects is a react based AI teaching",
+        "words": [
+          {
+            "word": "mainly",
+            "start": 16.01,
+            "end": 16.49,
+            "probability": 0.9545
+          },
+          {
+            "word": "around",
+            "start": 16.49,
+            "end": 16.89,
+            "probability": 0.9661
+          },
+          {
+            "word": "AI",
+            "start": 16.89,
+            "end": 17.19,
+            "probability": 0.9487
+          },
+          {
+            "word": "and",
+            "start": 17.19,
+            "end": 17.39,
+            "probability": 0.969
+          },
+          {
+            "word": "ML.",
+            "start": 17.39,
+            "end": 17.67,
+            "probability": 0.0451
+          },
+          {
+            "word": "One",
+            "start": 18.43,
+            "end": 18.61,
+            "probability": 0.8943
+          },
+          {
+            "word": "of",
+            "start": 18.61,
+            "end": 18.77,
+            "probability": 0.9811
+          },
+          {
+            "word": "my",
+            "start": 18.77,
+            "end": 18.93,
+            "probability": 0.9958
+          },
+          {
+            "word": "major",
+            "start": 18.93,
+            "end": 19.19,
+            "probability": 0.4534
+          },
+          {
+            "word": "projects",
+            "start": 19.19,
+            "end": 19.59,
+            "probability": 0.5506
+          },
+          {
+            "word": "is",
+            "start": 19.59,
+            "end": 20.07,
+            "probability": 0.9898
+          },
+          {
+            "word": "a",
+            "start": 20.07,
+            "end": 20.21,
+            "probability": 0.3983
+          },
+          {
+            "word": "react",
+            "start": 20.21,
+            "end": 20.43,
+            "probability": 0.1592
+          },
+          {
+            "word": "based",
+            "start": 20.43,
+            "end": 20.75,
+            "probability": 0.6456
+          },
+          {
+            "word": "AI",
+            "start": 20.75,
+            "end": 21.03,
+            "probability": 0.9492
+          },
+          {
+            "word": "teaching",
+            "start": 21.03,
+            "end": 21.27,
+            "probability": 0.7476
+          }
+        ]
+      },
+      {
+        "start": 21.27,
+        "end": 26.05,
+        "text": "assistant where user can interact with PDF lecture videos and web content using",
+        "words": [
+          {
+            "word": "assistant",
+            "start": 21.27,
+            "end": 21.91,
+            "probability": 0.9823
+          },
+          {
+            "word": "where",
+            "start": 21.91,
+            "end": 22.41,
+            "probability": 0.504
+          },
+          {
+            "word": "user",
+            "start": 22.41,
+            "end": 22.63,
+            "probability": 0.7195
+          },
+          {
+            "word": "can",
+            "start": 22.63,
+            "end": 22.97,
+            "probability": 0.9954
+          },
+          {
+            "word": "interact",
+            "start": 22.97,
+            "end": 23.29,
+            "probability": 0.9993
+          },
+          {
+            "word": "with",
+            "start": 23.29,
+            "end": 23.67,
+            "probability": 0.9963
+          },
+          {
+            "word": "PDF",
+            "start": 23.67,
+            "end": 24.09,
+            "probability": 0.8878
+          },
+          {
+            "word": "lecture",
+            "start": 24.09,
+            "end": 24.49,
+            "probability": 0.4846
+          },
+          {
+            "word": "videos",
+            "start": 24.49,
+            "end": 24.87,
+            "probability": 0.9544
+          },
+          {
+            "word": "and",
+            "start": 24.87,
+            "end": 25.13,
+            "probability": 0.8989
+          },
+          {
+            "word": "web",
+            "start": 25.13,
+            "end": 25.39,
+            "probability": 0.8417
+          },
+          {
+            "word": "content",
+            "start": 25.39,
+            "end": 25.67,
+            "probability": 0.933
+          },
+          {
+            "word": "using",
+            "start": 25.67,
+            "end": 26.05,
+            "probability": 0.9901
+          }
+        ]
+      },
+      {
+        "start": 26.05,
+        "end": 34.13,
+        "text": "lp. I used python, ln, ln, vector, vector search and document processing in this project.",
+        "words": [
+          {
+            "word": "lp.",
+            "start": 26.05,
+            "end": 26.63,
+            "probability": 0.3721
+          },
+          {
+            "word": "I",
+            "start": 27.79,
+            "end": 27.79,
+            "probability": 0.7167
+          },
+          {
+            "word": "used",
+            "start": 27.79,
+            "end": 28.55,
+            "probability": 0.8772
+          },
+          {
+            "word": "python,",
+            "start": 28.55,
+            "end": 29.21,
+            "probability": 0.5656
+          },
+          {
+            "word": "ln,",
+            "start": 29.57,
+            "end": 29.99,
+            "probability": 0.4316
+          },
+          {
+            "word": "ln,",
+            "start": 29.99,
+            "end": 30.41,
+            "probability": 0.7476
+          },
+          {
+            "word": "vector,",
+            "start": 30.73,
+            "end": 30.91,
+            "probability": 0.6499
+          },
+          {
+            "word": "vector",
+            "start": 30.91,
+            "end": 31.47,
+            "probability": 0.7704
+          },
+          {
+            "word": "search",
+            "start": 31.47,
+            "end": 32.07,
+            "probability": 0.5773
+          },
+          {
+            "word": "and",
+            "start": 32.07,
+            "end": 32.35,
+            "probability": 0.6699
+          },
+          {
+            "word": "document",
+            "start": 32.35,
+            "end": 32.67,
+            "probability": 0.9877
+          },
+          {
+            "word": "processing",
+            "start": 32.67,
+            "end": 33.17,
+            "probability": 0.9977
+          },
+          {
+            "word": "in",
+            "start": 33.17,
+            "end": 33.41,
+            "probability": 0.9548
+          },
+          {
+            "word": "this",
+            "start": 33.41,
+            "end": 33.67,
+            "probability": 0.981
+          },
+          {
+            "word": "project.",
+            "start": 33.67,
+            "end": 34.13,
+            "probability": 0.982
+          }
+        ]
+      },
+      {
+        "start": 34.91,
+        "end": 40.61,
+        "text": "I have also worked on ever speak an AI speaking coach that analyzes pronunciation, fluency,",
+        "words": [
+          {
+            "word": "I",
+            "start": 34.91,
+            "end": 34.91,
+            "probability": 0.9572
+          },
+          {
+            "word": "have",
+            "start": 34.91,
+            "end": 35.27,
+            "probability": 0.9348
+          },
+          {
+            "word": "also",
+            "start": 35.27,
+            "end": 35.43,
+            "probability": 0.9718
+          },
+          {
+            "word": "worked",
+            "start": 35.43,
+            "end": 35.69,
+            "probability": 0.9066
+          },
+          {
+            "word": "on",
+            "start": 35.69,
+            "end": 35.97,
+            "probability": 0.9973
+          },
+          {
+            "word": "ever",
+            "start": 35.97,
+            "end": 36.25,
+            "probability": 0.1543
+          },
+          {
+            "word": "speak",
+            "start": 36.25,
+            "end": 36.65,
+            "probability": 0.4496
+          },
+          {
+            "word": "an",
+            "start": 36.65,
+            "end": 36.93,
+            "probability": 0.3636
+          },
+          {
+            "word": "AI",
+            "start": 36.93,
+            "end": 37.17,
+            "probability": 0.7927
+          },
+          {
+            "word": "speaking",
+            "start": 37.17,
+            "end": 37.45,
+            "probability": 0.5495
+          },
+          {
+            "word": "coach",
+            "start": 37.45,
+            "end": 37.85,
+            "probability": 0.9798
+          },
+          {
+            "word": "that",
+            "start": 37.85,
+            "end": 38.15,
+            "probability": 0.9755
+          },
+          {
+            "word": "analyzes",
+            "start": 38.15,
+            "end": 39.01,
+            "probability": 0.8025
+          },
+          {
+            "word": "pronunciation,",
+            "start": 39.01,
+            "end": 39.77,
+            "probability": 0.5792
+          },
+          {
+            "word": "fluency,",
+            "start": 40.03,
+            "end": 40.61,
+            "probability": 0.7963
+          }
+        ]
+      },
+      {
+        "start": 40.85,
+        "end": 45.91,
+        "text": "filler words, poses and eye contact using whisper open cg and media pipe.",
+        "words": [
+          {
+            "word": "filler",
+            "start": 40.85,
+            "end": 40.99,
+            "probability": 0.8665
+          },
+          {
+            "word": "words,",
+            "start": 40.99,
+            "end": 41.49,
+            "probability": 0.5709
+          },
+          {
+            "word": "poses",
+            "start": 42.07,
+            "end": 42.07,
+            "probability": 0.9557
+          },
+          {
+            "word": "and",
+            "start": 42.07,
+            "end": 43.05,
+            "probability": 0.6507
+          },
+          {
+            "word": "eye",
+            "start": 43.05,
+            "end": 43.37,
+            "probability": 0.5062
+          },
+          {
+            "word": "contact",
+            "start": 43.37,
+            "end": 43.63,
+            "probability": 0.8864
+          },
+          {
+            "word": "using",
+            "start": 43.63,
+            "end": 43.93,
+            "probability": 0.9445
+          },
+          {
+            "word": "whisper",
+            "start": 43.93,
+            "end": 44.33,
+            "probability": 0.4009
+          },
+          {
+            "word": "open",
+            "start": 44.33,
+            "end": 44.73,
+            "probability": 0.2203
+          },
+          {
+            "word": "cg",
+            "start": 44.73,
+            "end": 45.07,
+            "probability": 0.2348
+          },
+          {
+            "word": "and",
+            "start": 45.07,
+            "end": 45.25,
+            "probability": 0.9238
+          },
+          {
+            "word": "media",
+            "start": 45.25,
+            "end": 45.45,
+            "probability": 0.8537
+          },
+          {
+            "word": "pipe.",
+            "start": 45.45,
+            "end": 45.91,
+            "probability": 0.2475
+          }
+        ]
+      },
+      {
+        "start": 46.85,
+        "end": 52.41,
+        "text": "I have also completed internship in generative AI and enterprise technologies gaining",
+        "words": [
+          {
+            "word": "I",
+            "start": 46.85,
+            "end": 47.05,
+            "probability": 0.9854
+          },
+          {
+            "word": "have",
+            "start": 47.05,
+            "end": 47.27,
+            "probability": 0.9852
+          },
+          {
+            "word": "also",
+            "start": 47.27,
+            "end": 47.57,
+            "probability": 0.9921
+          },
+          {
+            "word": "completed",
+            "start": 47.57,
+            "end": 47.97,
+            "probability": 0.9096
+          },
+          {
+            "word": "internship",
+            "start": 47.97,
+            "end": 48.53,
+            "probability": 0.7828
+          },
+          {
+            "word": "in",
+            "start": 48.53,
+            "end": 48.77,
+            "probability": 0.9598
+          },
+          {
+            "word": "generative",
+            "start": 48.77,
+            "end": 49.15,
+            "probability": 0.4568
+          },
+          {
+            "word": "AI",
+            "start": 49.15,
+            "end": 49.53,
+            "probability": 0.6697
+          },
+          {
+            "word": "and",
+            "start": 49.53,
+            "end": 50.27,
+            "probability": 0.9682
+          },
+          {
+            "word": "enterprise",
+            "start": 50.27,
+            "end": 50.69,
+            "probability": 0.3347
+          },
+          {
+            "word": "technologies",
+            "start": 50.69,
+            "end": 51.63,
+            "probability": 0.8488
+          },
+          {
+            "word": "gaining",
+            "start": 51.63,
+            "end": 52.41,
+            "probability": 0.8834
+          }
+        ]
+      },
+      {
+        "start": 52.41,
+        "end": 59.97,
+        "text": "And so let's expose the machine learning LLM from engineering Google Cloud AI services",
+        "words": [
+          {
+            "word": "And",
+            "start": 52.41,
+            "end": 52.61,
+            "probability": 0.0217
+          },
+          {
+            "word": "so",
+            "start": 52.61,
+            "end": 52.75,
+            "probability": 0.0651
+          },
+          {
+            "word": "let's",
+            "start": 52.75,
+            "end": 53.81,
+            "probability": 0.5968
+          },
+          {
+            "word": "expose",
+            "start": 53.81,
+            "end": 54.19,
+            "probability": 0.8767
+          },
+          {
+            "word": "the",
+            "start": 54.19,
+            "end": 54.87,
+            "probability": 0.5778
+          },
+          {
+            "word": "machine",
+            "start": 54.87,
+            "end": 55.31,
+            "probability": 0.9551
+          },
+          {
+            "word": "learning",
+            "start": 55.31,
+            "end": 55.79,
+            "probability": 0.893
+          },
+          {
+            "word": "LLM",
+            "start": 55.79,
+            "end": 57.29,
+            "probability": 0.9011
+          },
+          {
+            "word": "from",
+            "start": 57.29,
+            "end": 57.67,
+            "probability": 0.8986
+          },
+          {
+            "word": "engineering",
+            "start": 57.67,
+            "end": 58.27,
+            "probability": 0.7468
+          },
+          {
+            "word": "Google",
+            "start": 58.27,
+            "end": 58.53,
+            "probability": 0.7461
+          },
+          {
+            "word": "Cloud",
+            "start": 58.53,
+            "end": 58.91,
+            "probability": 0.8254
+          },
+          {
+            "word": "AI",
+            "start": 58.91,
+            "end": 59.23,
+            "probability": 0.9813
+          },
+          {
+            "word": "services",
+            "start": 59.23,
+            "end": 59.97,
+            "probability": 0.7366
+          }
+        ]
+      },
+      {
+        "start": 63.72,
+        "end": 66.64,
+        "text": "and workflow automation platform.",
+        "words": [
+          {
+            "word": "and",
+            "start": 63.72,
+            "end": 64.08,
+            "probability": 0.8893
+          },
+          {
+            "word": "workflow",
+            "start": 64.08,
+            "end": 64.44,
+            "probability": 0.1926
+          },
+          {
+            "word": "automation",
+            "start": 64.44,
+            "end": 64.98,
+            "probability": 0.7727
+          },
+          {
+            "word": "platform.",
+            "start": 64.98,
+            "end": 66.64,
+            "probability": 0.7916
+          }
+        ]
+      },
+      {
+        "start": 66.98,
+        "end": 72.7,
+        "text": "Currently, I am contributing to VIT mobile AI innovators app where I am working on AI",
+        "words": [
+          {
+            "word": "Currently,",
+            "start": 66.98,
+            "end": 67.44,
+            "probability": 0.9781
+          },
+          {
+            "word": "I",
+            "start": 67.76,
+            "end": 67.76,
+            "probability": 0.9901
+          },
+          {
+            "word": "am",
+            "start": 67.76,
+            "end": 67.96,
+            "probability": 0.9501
+          },
+          {
+            "word": "contributing",
+            "start": 67.96,
+            "end": 68.34,
+            "probability": 0.4863
+          },
+          {
+            "word": "to",
+            "start": 68.34,
+            "end": 68.72,
+            "probability": 0.9967
+          },
+          {
+            "word": "VIT",
+            "start": 68.72,
+            "end": 69.02,
+            "probability": 0.6565
+          },
+          {
+            "word": "mobile",
+            "start": 69.02,
+            "end": 69.6,
+            "probability": 0.626
+          },
+          {
+            "word": "AI",
+            "start": 69.6,
+            "end": 70.26,
+            "probability": 0.6386
+          },
+          {
+            "word": "innovators",
+            "start": 70.26,
+            "end": 70.74,
+            "probability": 0.6658
+          },
+          {
+            "word": "app",
+            "start": 70.74,
+            "end": 71.2,
+            "probability": 0.1088
+          },
+          {
+            "word": "where",
+            "start": 71.2,
+            "end": 71.5,
+            "probability": 0.6982
+          },
+          {
+            "word": "I",
+            "start": 71.5,
+            "end": 71.7,
+            "probability": 0.9889
+          },
+          {
+            "word": "am",
+            "start": 71.7,
+            "end": 71.8,
+            "probability": 0.9195
+          },
+          {
+            "word": "working",
+            "start": 71.8,
+            "end": 72.1,
+            "probability": 0.9938
+          },
+          {
+            "word": "on",
+            "start": 72.1,
+            "end": 72.44,
+            "probability": 0.9774
+          },
+          {
+            "word": "AI",
+            "start": 72.44,
+            "end": 72.7,
+            "probability": 0.995
+          }
+        ]
+      },
+      {
+        "start": 72.7,
+        "end": 78.28,
+        "text": "powered resumia optimization, blah, blah, blah, my current industrialized and problem",
+        "words": [
+          {
+            "word": "powered",
+            "start": 72.7,
+            "end": 73.26,
+            "probability": 0.6179
+          },
+          {
+            "word": "resumia",
+            "start": 73.26,
+            "end": 74.34,
+            "probability": 0.3223
+          },
+          {
+            "word": "optimization,",
+            "start": 74.34,
+            "end": 74.98,
+            "probability": 0.9895
+          },
+          {
+            "word": "blah,",
+            "start": 75.22,
+            "end": 75.4,
+            "probability": 0.4368
+          },
+          {
+            "word": "blah,",
+            "start": 75.56,
+            "end": 75.64,
+            "probability": 0.9948
+          },
+          {
+            "word": "blah,",
+            "start": 75.98,
+            "end": 75.98,
+            "probability": 0.9882
+          },
+          {
+            "word": "my",
+            "start": 76.66,
+            "end": 76.68,
+            "probability": 0.4465
+          },
+          {
+            "word": "current",
+            "start": 76.68,
+            "end": 77.04,
+            "probability": 0.9989
+          },
+          {
+            "word": "industrialized",
+            "start": 77.04,
+            "end": 77.66,
+            "probability": 0.3836
+          },
+          {
+            "word": "and",
+            "start": 77.66,
+            "end": 77.98,
+            "probability": 0.2007
+          },
+          {
+            "word": "problem",
+            "start": 77.98,
+            "end": 78.28,
+            "probability": 0.256
+          }
+        ]
+      },
+      {
+        "start": 78.28,
+        "end": 82.6,
+        "text": "solving machine learning, data science and building technologies that solve real-world",
+        "words": [
+          {
+            "word": "solving",
+            "start": 78.28,
+            "end": 78.54,
+            "probability": 0.7635
+          },
+          {
+            "word": "machine",
+            "start": 78.54,
+            "end": 78.94,
+            "probability": 0.9857
+          },
+          {
+            "word": "learning,",
+            "start": 78.94,
+            "end": 79.92,
+            "probability": 0.4337
+          },
+          {
+            "word": "data",
+            "start": 79.92,
+            "end": 80.18,
+            "probability": 0.2067
+          },
+          {
+            "word": "science",
+            "start": 80.18,
+            "end": 80.48,
+            "probability": 0.9355
+          },
+          {
+            "word": "and",
+            "start": 80.48,
+            "end": 80.64,
+            "probability": 0.7756
+          },
+          {
+            "word": "building",
+            "start": 80.64,
+            "end": 80.98,
+            "probability": 0.9944
+          },
+          {
+            "word": "technologies",
+            "start": 80.98,
+            "end": 81.42,
+            "probability": 0.9385
+          },
+          {
+            "word": "that",
+            "start": 81.42,
+            "end": 81.82,
+            "probability": 0.6149
+          },
+          {
+            "word": "solve",
+            "start": 81.82,
+            "end": 82.08,
+            "probability": 0.6203
+          },
+          {
+            "word": "real",
+            "start": 82.08,
+            "end": 82.34,
+            "probability": 0.6794
+          },
+          {
+            "word": "-world",
+            "start": 82.34,
+            "end": 82.6,
+            "probability": 0.615
+          }
+        ]
+      },
+      {
+        "start": 82.6,
+        "end": 89.22,
+        "text": "I am looking for an opportunity where I can learn contribute and work on practical industry projects.",
+        "words": [
+          {
+            "word": "I",
+            "start": 82.6,
+            "end": 83.7,
+            "probability": 0.3068
+          },
+          {
+            "word": "am",
+            "start": 83.7,
+            "end": 84.3,
+            "probability": 0.7738
+          },
+          {
+            "word": "looking",
+            "start": 84.3,
+            "end": 84.52,
+            "probability": 0.9958
+          },
+          {
+            "word": "for",
+            "start": 84.52,
+            "end": 84.76,
+            "probability": 0.9904
+          },
+          {
+            "word": "an",
+            "start": 84.76,
+            "end": 84.88,
+            "probability": 0.9384
+          },
+          {
+            "word": "opportunity",
+            "start": 84.88,
+            "end": 85.44,
+            "probability": 0.9981
+          },
+          {
+            "word": "where",
+            "start": 85.44,
+            "end": 86.28,
+            "probability": 0.5448
+          },
+          {
+            "word": "I",
+            "start": 86.28,
+            "end": 86.38,
+            "probability": 0.9762
+          },
+          {
+            "word": "can",
+            "start": 86.38,
+            "end": 86.58,
+            "probability": 0.996
+          },
+          {
+            "word": "learn",
+            "start": 86.58,
+            "end": 86.84,
+            "probability": 0.9918
+          },
+          {
+            "word": "contribute",
+            "start": 86.84,
+            "end": 87.22,
+            "probability": 0.035
+          },
+          {
+            "word": "and",
+            "start": 87.22,
+            "end": 87.48,
+            "probability": 0.9384
+          },
+          {
+            "word": "work",
+            "start": 87.48,
+            "end": 87.8,
+            "probability": 0.981
+          },
+          {
+            "word": "on",
+            "start": 87.8,
+            "end": 87.96,
+            "probability": 0.9642
+          },
+          {
+            "word": "practical",
+            "start": 87.96,
+            "end": 88.22,
+            "probability": 0.9104
+          },
+          {
+            "word": "industry",
+            "start": 88.22,
+            "end": 88.68,
+            "probability": 0.4085
+          },
+          {
+            "word": "projects.",
+            "start": 88.68,
+            "end": 89.22,
+            "probability": 0.9701
+          }
+        ]
+      },
+      {
+        "start": 89.9,
+        "end": 92.28,
+        "text": "That is why I am really excited about this role.",
+        "words": [
+          {
+            "word": "That",
+            "start": 89.9,
+            "end": 89.98,
+            "probability": 0.9436
+          },
+          {
+            "word": "is",
+            "start": 89.98,
+            "end": 90.14,
+            "probability": 0.991
+          },
+          {
+            "word": "why",
+            "start": 90.14,
+            "end": 90.36,
+            "probability": 0.9821
+          },
+          {
+            "word": "I",
+            "start": 90.36,
+            "end": 90.56,
+            "probability": 0.9748
+          },
+          {
+            "word": "am",
+            "start": 90.56,
+            "end": 90.56,
+            "probability": 0.8982
+          },
+          {
+            "word": "really",
+            "start": 90.56,
+            "end": 90.86,
+            "probability": 0.8829
+          },
+          {
+            "word": "excited",
+            "start": 90.86,
+            "end": 91.22,
+            "probability": 0.9906
+          },
+          {
+            "word": "about",
+            "start": 91.22,
+            "end": 91.62,
+            "probability": 0.997
+          },
+          {
+            "word": "this",
+            "start": 91.62,
+            "end": 91.84,
+            "probability": 0.9865
+          },
+          {
+            "word": "role.",
+            "start": 91.84,
+            "end": 92.28,
+            "probability": 0.9366
+          }
+        ]
+      }
+    ]
+  },
+  "speech_metrics": {
+    "comparison": {
+      "expected_text": "Good morning/afternoon, and thank you for giving me this opportunity to introduce myself. My name is Harsh Patial, and I am a final-year B.Tech student at VIT Bhopal, specializing in Computer Science with a focus on Machine Learning. I currently have a CGPA of 8.9 30-40% TIME PROJECTS Over the past two years, I have worked on projects related to Artificial Intelligence, Machine Learning, and Natural Language Processing. Some of my key projects include a RAG-based AI Teaching Assistant, where I worked with Python, LangChain, LLMs, vector search, and document processing, and EVA Speak, an AI-based speaking coach that analyzes speech, fluency, pronunciation, and visual communication using Python, Whisper, OpenCV, and MediaPipe. 10-20% Internships Alongside my projects, I have completed internships focused on AI and Generative AI technologies and am currently contributing to real-world AI projects through the AI Innovators Hub at VIT Bhopal. Career Goals = 20-25% of introduction Apart from development, I enjoy problem-solving, building useful technology, and applying Machine Learning and Data Science to solve practical problems. I enjoy learning new tools and converting ideas into working projects. I am looking for an opportunity where I can learn from experienced professionals, contribute to real-world projects, and grow as an AI/ML or Data Science professional. That is why I am excited about this opportunity. Thank you.",
+      "recognized_text": "Good morning, sir. My name is Haspartia, and I am a final ear beat X student at VIT mobile specializing in computer science with a focus on machine learning. My current CGP is 8.9. Over the past two years, I have built projects mainly around AI and ML. One of my major projects is a react based AI teaching assistant where user can interact with PDF lecture videos and web content using lp. I used python, ln, ln, vector, vector search and document processing in this project. I have also worked on ever speak an AI speaking coach that analyzes pronunciation, fluency, filler words, poses and eye contact using whisper open cg and media pipe. I have also completed internship in generative AI and enterprise technologies gaining And so let's expose the machine learning LLM from engineering Google Cloud AI services and workflow automation platform. Currently, I am contributing to VIT mobile AI innovators app where I am working on AI powered resumia optimization, blah, blah, blah, my current industrialized and problem solving machine learning, data science and building technologies that solve real-world I am looking for an opportunity where I can learn contribute and work on practical industry projects. That is why I am really excited about this role.",
+      "normalized_expected_text": "good morning afternoon and thank you for giving me this opportunity to introduce myself my name is harsh patial and i am a final year b tech student at vit bhopal specializing in computer science with a focus on machine learning i currently have a cgpa of 8 9 30 40 time projects over the past two years i have worked on projects related to artificial intelligence machine learning and natural language processing some of my key projects include a rag based ai teaching assistant where i worked with python langchain llms vector search and document processing and eva speak an ai based speaking coach that analyzes speech fluency pronunciation and visual communication using python whisper opencv and mediapipe 10 20 internships alongside my projects i have completed internships focused on ai and generative ai technologies and am currently contributing to real world ai projects through the ai innovators hub at vit bhopal career goals 20 25 of introduction apart from development i enjoy problem solving building useful technology and applying machine learning and data science to solve practical problems i enjoy learning new tools and converting ideas into working projects i am looking for an opportunity where i can learn from experienced professionals contribute to real world projects and grow as an ai ml or data science professional that is why i am excited about this opportunity thank you",
+      "normalized_recognized_text": "good morning sir my name is haspartia and i am a final ear beat x student at vit mobile specializing in computer science with a focus on machine learning my current cgp is 8 9 over the past two years i have built projects mainly around ai and ml one of my major projects is a react based ai teaching assistant where user can interact with pdf lecture videos and web content using lp i used python ln ln vector vector search and document processing in this project i have also worked on ever speak an ai speaking coach that analyzes pronunciation fluency filler words poses and eye contact using whisper open cg and media pipe i have also completed internship in generative ai and enterprise technologies gaining and so let's expose the machine learning llm from engineering google cloud ai services and workflow automation platform currently i am contributing to vit mobile ai innovators app where i am working on ai powered resumia optimization blah blah blah my current industrialized and problem solving machine learning data science and building technologies that solve real world i am looking for an opportunity where i can learn contribute and work on practical industry projects that is why i am really excited about this role",
+      "wer": 0.7174,
+      "cer": 0.5946,
+      "missing_words": [
+        "and",
+        "thank",
+        "you",
+        "for",
+        "giving",
+        "me",
+        "this",
+        "opportunity",
+        "to",
+        "introduce",
+        "myself",
+        "patial",
+        "cgpa",
+        "of",
+        "30",
+        "40",
+        "time",
+        "projects",
+        "on",
+        "intelligence",
+        "machine",
+        "learning",
+        "processing",
+        "some",
+        "with",
+        "based",
+        "python",
+        "20",
+        "internships",
+        "alongside",
+        "my",
+        "projects",
+        "currently",
+        "contributing",
+        "to",
+        "ai",
+        "projects",
+        "through",
+        "the",
+        "ai",
+        "innovators",
+        "hub",
+        "at",
+        "vit",
+        "bhopal",
+        "career",
+        "goals",
+        "20",
+        "25",
+        "of",
+        "introduction",
+        "apart",
+        "from",
+        "development",
+        "i",
+        "enjoy",
+        "problem",
+        "solving",
+        "building",
+        "useful",
+        "technology",
+        "and",
+        "applying",
+        "machine",
+        "learning",
+        "and",
+        "data",
+        "science",
+        "to",
+        "solve",
+        "practical",
+        "problems",
+        "i",
+        "enjoy",
+        "learning",
+        "new",
+        "tools",
+        "and",
+        "converting",
+        "ideas",
+        "into",
+        "working",
+        "projects",
+        "from",
+        "experienced",
+        "professionals",
+        "and",
+        "grow",
+        "as",
+        "an",
+        "ai",
+        "ml",
+        "or",
+        "data",
+        "science",
+        "professional",
+        "thank",
+        "you"
+      ],
+      "inserted_words": [
+        "user",
+        "can",
+        "interact",
+        "with",
+        "pdf",
+        "lecture",
+        "videos",
+        "and",
+        "web",
+        "content",
+        "using",
+        "lp",
+        "vector",
+        "project",
+        "i",
+        "have",
+        "also",
+        "worked",
+        "on",
+        "ever",
+        "words",
+        "poses",
+        "cg",
+        "also",
+        "generative",
+        "ai",
+        "and",
+        "enterprise",
+        "technologies",
+        "gaining",
+        "and",
+        "so",
+        "let's",
+        "expose",
+        "the",
+        "machine",
+        "learning",
+        "llm",
+        "from",
+        "engineering",
+        "google",
+        "cloud",
+        "ai",
+        "services",
+        "and",
+        "workflow",
+        "automation",
+        "platform",
+        "currently",
+        "i",
+        "am",
+        "contributing",
+        "to",
+        "vit",
+        "mobile",
+        "ai",
+        "innovators",
+        "app",
+        "where",
+        "i",
+        "am",
+        "working",
+        "powered",
+        "resumia",
+        "optimization",
+        "blah",
+        "blah",
+        "blah",
+        "my",
+        "current",
+        "industrialized",
+        "machine",
+        "learning",
+        "data",
+        "science",
+        "and",
+        "building",
+        "practical",
+        "industry",
+        "really"
+      ],
+      "substituted_words": [
+        {
+          "expected": "afternoon",
+          "recognized": "sir"
+        },
+        {
+          "expected": "harsh",
+          "recognized": "haspartia"
+        },
+        {
+          "expected": "year",
+          "recognized": "ear"
+        },
+        {
+          "expected": "b",
+          "recognized": "beat"
+        },
+        {
+          "expected": "tech",
+          "recognized": "x"
+        },
+        {
+          "expected": "bhopal",
+          "recognized": "mobile"
+        },
+        {
+          "expected": "i",
+          "recognized": "my"
+        },
+        {
+          "expected": "currently",
+          "recognized": "current"
+        },
+        {
+          "expected": "have",
+          "recognized": "cgp"
+        },
+        {
+          "expected": "a",
+          "recognized": "is"
+        },
+        {
+          "expected": "worked",
+          "recognized": "built"
+        },
+        {
+          "expected": "related",
+          "recognized": "mainly"
+        },
+        {
+          "expected": "to",
+          "recognized": "around"
+        },
+        {
+          "expected": "artificial",
+          "recognized": "ai"
+        },
+        {
+          "expected": "natural",
+          "recognized": "ml"
+        },
+        {
+          "expected": "language",
+          "recognized": "one"
+        },
+        {
+          "expected": "key",
+          "recognized": "major"
+        },
+        {
+          "expected": "include",
+          "recognized": "is"
+        },
+        {
+          "expected": "rag",
+          "recognized": "react"
+        },
+        {
+          "expected": "worked",
+          "recognized": "used"
+        },
+        {
+          "expected": "langchain",
+          "recognized": "ln"
+        },
+        {
+          "expected": "llms",
+          "recognized": "ln"
+        },
+        {
+          "expected": "and",
+          "recognized": "in"
+        },
+        {
+          "expected": "eva",
+          "recognized": "this"
+        },
+        {
+          "expected": "speech",
+          "recognized": "pronunciation"
+        },
+        {
+          "expected": "pronunciation",
+          "recognized": "filler"
+        },
+        {
+          "expected": "visual",
+          "recognized": "eye"
+        },
+        {
+          "expected": "communication",
+          "recognized": "contact"
+        },
+        {
+          "expected": "opencv",
+          "recognized": "open"
+        },
+        {
+          "expected": "mediapipe",
+          "recognized": "media"
+        },
+        {
+          "expected": "10",
+          "recognized": "pipe"
+        },
+        {
+          "expected": "internships",
+          "recognized": "internship"
+        },
+        {
+          "expected": "focused",
+          "recognized": "in"
+        },
+        {
+          "expected": "generative",
+          "recognized": "problem"
+        },
+        {
+          "expected": "ai",
+          "recognized": "solving"
+        },
+        {
+          "expected": "and",
+          "recognized": "that"
+        },
+        {
+          "expected": "am",
+          "recognized": "solve"
+        },
+        {
+          "expected": "to",
+          "recognized": "and"
+        },
+        {
+          "expected": "real",
+          "recognized": "work"
+        },
+        {
+          "expected": "world",
+          "recognized": "on"
+        },
+        {
+          "expected": "opportunity",
+          "recognized": "role"
+        }
+      ],
+      "pronunciation_accuracy_score": 32,
+      "alignment": [
+        {
+          "operation": "equal",
+          "expected": "good",
+          "recognized": "good",
+          "expected_index": 0,
+          "recognized_index": 0
+        },
+        {
+          "operation": "equal",
+          "expected": "morning",
+          "recognized": "morning",
+          "expected_index": 1,
+          "recognized_index": 1
+        },
+        {
+          "operation": "substitute",
+          "expected": "afternoon",
+          "recognized": "sir",
+          "expected_index": 2,
+          "recognized_index": 2
+        },
+        {
+          "operation": "delete",
+          "expected": "and",
+          "recognized": null,
+          "expected_index": 3,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "thank",
+          "recognized": null,
+          "expected_index": 4,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "you",
+          "recognized": null,
+          "expected_index": 5,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "for",
+          "recognized": null,
+          "expected_index": 6,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "giving",
+          "recognized": null,
+          "expected_index": 7,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "me",
+          "recognized": null,
+          "expected_index": 8,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "this",
+          "recognized": null,
+          "expected_index": 9,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "opportunity",
+          "recognized": null,
+          "expected_index": 10,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "to",
+          "recognized": null,
+          "expected_index": 11,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "introduce",
+          "recognized": null,
+          "expected_index": 12,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "myself",
+          "recognized": null,
+          "expected_index": 13,
+          "recognized_index": null
+        },
+        {
+          "operation": "equal",
+          "expected": "my",
+          "recognized": "my",
+          "expected_index": 14,
+          "recognized_index": 3
+        },
+        {
+          "operation": "equal",
+          "expected": "name",
+          "recognized": "name",
+          "expected_index": 15,
+          "recognized_index": 4
+        },
+        {
+          "operation": "equal",
+          "expected": "is",
+          "recognized": "is",
+          "expected_index": 16,
+          "recognized_index": 5
+        },
+        {
+          "operation": "substitute",
+          "expected": "harsh",
+          "recognized": "haspartia",
+          "expected_index": 17,
+          "recognized_index": 6
+        },
+        {
+          "operation": "delete",
+          "expected": "patial",
+          "recognized": null,
+          "expected_index": 18,
+          "recognized_index": null
+        },
+        {
+          "operation": "equal",
+          "expected": "and",
+          "recognized": "and",
+          "expected_index": 19,
+          "recognized_index": 7
+        },
+        {
+          "operation": "equal",
+          "expected": "i",
+          "recognized": "i",
+          "expected_index": 20,
+          "recognized_index": 8
+        },
+        {
+          "operation": "equal",
+          "expected": "am",
+          "recognized": "am",
+          "expected_index": 21,
+          "recognized_index": 9
+        },
+        {
+          "operation": "equal",
+          "expected": "a",
+          "recognized": "a",
+          "expected_index": 22,
+          "recognized_index": 10
+        },
+        {
+          "operation": "equal",
+          "expected": "final",
+          "recognized": "final",
+          "expected_index": 23,
+          "recognized_index": 11
+        },
+        {
+          "operation": "substitute",
+          "expected": "year",
+          "recognized": "ear",
+          "expected_index": 24,
+          "recognized_index": 12
+        },
+        {
+          "operation": "substitute",
+          "expected": "b",
+          "recognized": "beat",
+          "expected_index": 25,
+          "recognized_index": 13
+        },
+        {
+          "operation": "substitute",
+          "expected": "tech",
+          "recognized": "x",
+          "expected_index": 26,
+          "recognized_index": 14
+        },
+        {
+          "operation": "equal",
+          "expected": "student",
+          "recognized": "student",
+          "expected_index": 27,
+          "recognized_index": 15
+        },
+        {
+          "operation": "equal",
+          "expected": "at",
+          "recognized": "at",
+          "expected_index": 28,
+          "recognized_index": 16
+        },
+        {
+          "operation": "equal",
+          "expected": "vit",
+          "recognized": "vit",
+          "expected_index": 29,
+          "recognized_index": 17
+        },
+        {
+          "operation": "substitute",
+          "expected": "bhopal",
+          "recognized": "mobile",
+          "expected_index": 30,
+          "recognized_index": 18
+        },
+        {
+          "operation": "equal",
+          "expected": "specializing",
+          "recognized": "specializing",
+          "expected_index": 31,
+          "recognized_index": 19
+        },
+        {
+          "operation": "equal",
+          "expected": "in",
+          "recognized": "in",
+          "expected_index": 32,
+          "recognized_index": 20
+        },
+        {
+          "operation": "equal",
+          "expected": "computer",
+          "recognized": "computer",
+          "expected_index": 33,
+          "recognized_index": 21
+        },
+        {
+          "operation": "equal",
+          "expected": "science",
+          "recognized": "science",
+          "expected_index": 34,
+          "recognized_index": 22
+        },
+        {
+          "operation": "equal",
+          "expected": "with",
+          "recognized": "with",
+          "expected_index": 35,
+          "recognized_index": 23
+        },
+        {
+          "operation": "equal",
+          "expected": "a",
+          "recognized": "a",
+          "expected_index": 36,
+          "recognized_index": 24
+        },
+        {
+          "operation": "equal",
+          "expected": "focus",
+          "recognized": "focus",
+          "expected_index": 37,
+          "recognized_index": 25
+        },
+        {
+          "operation": "equal",
+          "expected": "on",
+          "recognized": "on",
+          "expected_index": 38,
+          "recognized_index": 26
+        },
+        {
+          "operation": "equal",
+          "expected": "machine",
+          "recognized": "machine",
+          "expected_index": 39,
+          "recognized_index": 27
+        },
+        {
+          "operation": "equal",
+          "expected": "learning",
+          "recognized": "learning",
+          "expected_index": 40,
+          "recognized_index": 28
+        },
+        {
+          "operation": "substitute",
+          "expected": "i",
+          "recognized": "my",
+          "expected_index": 41,
+          "recognized_index": 29
+        },
+        {
+          "operation": "substitute",
+          "expected": "currently",
+          "recognized": "current",
+          "expected_index": 42,
+          "recognized_index": 30
+        },
+        {
+          "operation": "substitute",
+          "expected": "have",
+          "recognized": "cgp",
+          "expected_index": 43,
+          "recognized_index": 31
+        },
+        {
+          "operation": "substitute",
+          "expected": "a",
+          "recognized": "is",
+          "expected_index": 44,
+          "recognized_index": 32
+        },
+        {
+          "operation": "delete",
+          "expected": "cgpa",
+          "recognized": null,
+          "expected_index": 45,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "of",
+          "recognized": null,
+          "expected_index": 46,
+          "recognized_index": null
+        },
+        {
+          "operation": "equal",
+          "expected": "8",
+          "recognized": "8",
+          "expected_index": 47,
+          "recognized_index": 33
+        },
+        {
+          "operation": "equal",
+          "expected": "9",
+          "recognized": "9",
+          "expected_index": 48,
+          "recognized_index": 34
+        },
+        {
+          "operation": "delete",
+          "expected": "30",
+          "recognized": null,
+          "expected_index": 49,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "40",
+          "recognized": null,
+          "expected_index": 50,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "time",
+          "recognized": null,
+          "expected_index": 51,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "projects",
+          "recognized": null,
+          "expected_index": 52,
+          "recognized_index": null
+        },
+        {
+          "operation": "equal",
+          "expected": "over",
+          "recognized": "over",
+          "expected_index": 53,
+          "recognized_index": 35
+        },
+        {
+          "operation": "equal",
+          "expected": "the",
+          "recognized": "the",
+          "expected_index": 54,
+          "recognized_index": 36
+        },
+        {
+          "operation": "equal",
+          "expected": "past",
+          "recognized": "past",
+          "expected_index": 55,
+          "recognized_index": 37
+        },
+        {
+          "operation": "equal",
+          "expected": "two",
+          "recognized": "two",
+          "expected_index": 56,
+          "recognized_index": 38
+        },
+        {
+          "operation": "equal",
+          "expected": "years",
+          "recognized": "years",
+          "expected_index": 57,
+          "recognized_index": 39
+        },
+        {
+          "operation": "equal",
+          "expected": "i",
+          "recognized": "i",
+          "expected_index": 58,
+          "recognized_index": 40
+        },
+        {
+          "operation": "equal",
+          "expected": "have",
+          "recognized": "have",
+          "expected_index": 59,
+          "recognized_index": 41
+        },
+        {
+          "operation": "substitute",
+          "expected": "worked",
+          "recognized": "built",
+          "expected_index": 60,
+          "recognized_index": 42
+        },
+        {
+          "operation": "delete",
+          "expected": "on",
+          "recognized": null,
+          "expected_index": 61,
+          "recognized_index": null
+        },
+        {
+          "operation": "equal",
+          "expected": "projects",
+          "recognized": "projects",
+          "expected_index": 62,
+          "recognized_index": 43
+        },
+        {
+          "operation": "substitute",
+          "expected": "related",
+          "recognized": "mainly",
+          "expected_index": 63,
+          "recognized_index": 44
+        },
+        {
+          "operation": "substitute",
+          "expected": "to",
+          "recognized": "around",
+          "expected_index": 64,
+          "recognized_index": 45
+        },
+        {
+          "operation": "substitute",
+          "expected": "artificial",
+          "recognized": "ai",
+          "expected_index": 65,
+          "recognized_index": 46
+        },
+        {
+          "operation": "delete",
+          "expected": "intelligence",
+          "recognized": null,
+          "expected_index": 66,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "machine",
+          "recognized": null,
+          "expected_index": 67,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "learning",
+          "recognized": null,
+          "expected_index": 68,
+          "recognized_index": null
+        },
+        {
+          "operation": "equal",
+          "expected": "and",
+          "recognized": "and",
+          "expected_index": 69,
+          "recognized_index": 47
+        },
+        {
+          "operation": "substitute",
+          "expected": "natural",
+          "recognized": "ml",
+          "expected_index": 70,
+          "recognized_index": 48
+        },
+        {
+          "operation": "substitute",
+          "expected": "language",
+          "recognized": "one",
+          "expected_index": 71,
+          "recognized_index": 49
+        },
+        {
+          "operation": "delete",
+          "expected": "processing",
+          "recognized": null,
+          "expected_index": 72,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "some",
+          "recognized": null,
+          "expected_index": 73,
+          "recognized_index": null
+        },
+        {
+          "operation": "equal",
+          "expected": "of",
+          "recognized": "of",
+          "expected_index": 74,
+          "recognized_index": 50
+        },
+        {
+          "operation": "equal",
+          "expected": "my",
+          "recognized": "my",
+          "expected_index": 75,
+          "recognized_index": 51
+        },
+        {
+          "operation": "substitute",
+          "expected": "key",
+          "recognized": "major",
+          "expected_index": 76,
+          "recognized_index": 52
+        },
+        {
+          "operation": "equal",
+          "expected": "projects",
+          "recognized": "projects",
+          "expected_index": 77,
+          "recognized_index": 53
+        },
+        {
+          "operation": "substitute",
+          "expected": "include",
+          "recognized": "is",
+          "expected_index": 78,
+          "recognized_index": 54
+        },
+        {
+          "operation": "equal",
+          "expected": "a",
+          "recognized": "a",
+          "expected_index": 79,
+          "recognized_index": 55
+        },
+        {
+          "operation": "substitute",
+          "expected": "rag",
+          "recognized": "react",
+          "expected_index": 80,
+          "recognized_index": 56
+        },
+        {
+          "operation": "equal",
+          "expected": "based",
+          "recognized": "based",
+          "expected_index": 81,
+          "recognized_index": 57
+        },
+        {
+          "operation": "equal",
+          "expected": "ai",
+          "recognized": "ai",
+          "expected_index": 82,
+          "recognized_index": 58
+        },
+        {
+          "operation": "equal",
+          "expected": "teaching",
+          "recognized": "teaching",
+          "expected_index": 83,
+          "recognized_index": 59
+        },
+        {
+          "operation": "equal",
+          "expected": "assistant",
+          "recognized": "assistant",
+          "expected_index": 84,
+          "recognized_index": 60
+        },
+        {
+          "operation": "equal",
+          "expected": "where",
+          "recognized": "where",
+          "expected_index": 85,
+          "recognized_index": 61
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "user",
+          "expected_index": null,
+          "recognized_index": 62
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "can",
+          "expected_index": null,
+          "recognized_index": 63
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "interact",
+          "expected_index": null,
+          "recognized_index": 64
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "with",
+          "expected_index": null,
+          "recognized_index": 65
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "pdf",
+          "expected_index": null,
+          "recognized_index": 66
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "lecture",
+          "expected_index": null,
+          "recognized_index": 67
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "videos",
+          "expected_index": null,
+          "recognized_index": 68
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "and",
+          "expected_index": null,
+          "recognized_index": 69
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "web",
+          "expected_index": null,
+          "recognized_index": 70
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "content",
+          "expected_index": null,
+          "recognized_index": 71
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "using",
+          "expected_index": null,
+          "recognized_index": 72
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "lp",
+          "expected_index": null,
+          "recognized_index": 73
+        },
+        {
+          "operation": "equal",
+          "expected": "i",
+          "recognized": "i",
+          "expected_index": 86,
+          "recognized_index": 74
+        },
+        {
+          "operation": "substitute",
+          "expected": "worked",
+          "recognized": "used",
+          "expected_index": 87,
+          "recognized_index": 75
+        },
+        {
+          "operation": "delete",
+          "expected": "with",
+          "recognized": null,
+          "expected_index": 88,
+          "recognized_index": null
+        },
+        {
+          "operation": "equal",
+          "expected": "python",
+          "recognized": "python",
+          "expected_index": 89,
+          "recognized_index": 76
+        },
+        {
+          "operation": "substitute",
+          "expected": "langchain",
+          "recognized": "ln",
+          "expected_index": 90,
+          "recognized_index": 77
+        },
+        {
+          "operation": "substitute",
+          "expected": "llms",
+          "recognized": "ln",
+          "expected_index": 91,
+          "recognized_index": 78
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "vector",
+          "expected_index": null,
+          "recognized_index": 79
+        },
+        {
+          "operation": "equal",
+          "expected": "vector",
+          "recognized": "vector",
+          "expected_index": 92,
+          "recognized_index": 80
+        },
+        {
+          "operation": "equal",
+          "expected": "search",
+          "recognized": "search",
+          "expected_index": 93,
+          "recognized_index": 81
+        },
+        {
+          "operation": "equal",
+          "expected": "and",
+          "recognized": "and",
+          "expected_index": 94,
+          "recognized_index": 82
+        },
+        {
+          "operation": "equal",
+          "expected": "document",
+          "recognized": "document",
+          "expected_index": 95,
+          "recognized_index": 83
+        },
+        {
+          "operation": "equal",
+          "expected": "processing",
+          "recognized": "processing",
+          "expected_index": 96,
+          "recognized_index": 84
+        },
+        {
+          "operation": "substitute",
+          "expected": "and",
+          "recognized": "in",
+          "expected_index": 97,
+          "recognized_index": 85
+        },
+        {
+          "operation": "substitute",
+          "expected": "eva",
+          "recognized": "this",
+          "expected_index": 98,
+          "recognized_index": 86
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "project",
+          "expected_index": null,
+          "recognized_index": 87
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "i",
+          "expected_index": null,
+          "recognized_index": 88
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "have",
+          "expected_index": null,
+          "recognized_index": 89
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "also",
+          "expected_index": null,
+          "recognized_index": 90
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "worked",
+          "expected_index": null,
+          "recognized_index": 91
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "on",
+          "expected_index": null,
+          "recognized_index": 92
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "ever",
+          "expected_index": null,
+          "recognized_index": 93
+        },
+        {
+          "operation": "equal",
+          "expected": "speak",
+          "recognized": "speak",
+          "expected_index": 99,
+          "recognized_index": 94
+        },
+        {
+          "operation": "equal",
+          "expected": "an",
+          "recognized": "an",
+          "expected_index": 100,
+          "recognized_index": 95
+        },
+        {
+          "operation": "equal",
+          "expected": "ai",
+          "recognized": "ai",
+          "expected_index": 101,
+          "recognized_index": 96
+        },
+        {
+          "operation": "delete",
+          "expected": "based",
+          "recognized": null,
+          "expected_index": 102,
+          "recognized_index": null
+        },
+        {
+          "operation": "equal",
+          "expected": "speaking",
+          "recognized": "speaking",
+          "expected_index": 103,
+          "recognized_index": 97
+        },
+        {
+          "operation": "equal",
+          "expected": "coach",
+          "recognized": "coach",
+          "expected_index": 104,
+          "recognized_index": 98
+        },
+        {
+          "operation": "equal",
+          "expected": "that",
+          "recognized": "that",
+          "expected_index": 105,
+          "recognized_index": 99
+        },
+        {
+          "operation": "equal",
+          "expected": "analyzes",
+          "recognized": "analyzes",
+          "expected_index": 106,
+          "recognized_index": 100
+        },
+        {
+          "operation": "substitute",
+          "expected": "speech",
+          "recognized": "pronunciation",
+          "expected_index": 107,
+          "recognized_index": 101
+        },
+        {
+          "operation": "equal",
+          "expected": "fluency",
+          "recognized": "fluency",
+          "expected_index": 108,
+          "recognized_index": 102
+        },
+        {
+          "operation": "substitute",
+          "expected": "pronunciation",
+          "recognized": "filler",
+          "expected_index": 109,
+          "recognized_index": 103
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "words",
+          "expected_index": null,
+          "recognized_index": 104
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "poses",
+          "expected_index": null,
+          "recognized_index": 105
+        },
+        {
+          "operation": "equal",
+          "expected": "and",
+          "recognized": "and",
+          "expected_index": 110,
+          "recognized_index": 106
+        },
+        {
+          "operation": "substitute",
+          "expected": "visual",
+          "recognized": "eye",
+          "expected_index": 111,
+          "recognized_index": 107
+        },
+        {
+          "operation": "substitute",
+          "expected": "communication",
+          "recognized": "contact",
+          "expected_index": 112,
+          "recognized_index": 108
+        },
+        {
+          "operation": "equal",
+          "expected": "using",
+          "recognized": "using",
+          "expected_index": 113,
+          "recognized_index": 109
+        },
+        {
+          "operation": "delete",
+          "expected": "python",
+          "recognized": null,
+          "expected_index": 114,
+          "recognized_index": null
+        },
+        {
+          "operation": "equal",
+          "expected": "whisper",
+          "recognized": "whisper",
+          "expected_index": 115,
+          "recognized_index": 110
+        },
+        {
+          "operation": "substitute",
+          "expected": "opencv",
+          "recognized": "open",
+          "expected_index": 116,
+          "recognized_index": 111
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "cg",
+          "expected_index": null,
+          "recognized_index": 112
+        },
+        {
+          "operation": "equal",
+          "expected": "and",
+          "recognized": "and",
+          "expected_index": 117,
+          "recognized_index": 113
+        },
+        {
+          "operation": "substitute",
+          "expected": "mediapipe",
+          "recognized": "media",
+          "expected_index": 118,
+          "recognized_index": 114
+        },
+        {
+          "operation": "substitute",
+          "expected": "10",
+          "recognized": "pipe",
+          "expected_index": 119,
+          "recognized_index": 115
+        },
+        {
+          "operation": "delete",
+          "expected": "20",
+          "recognized": null,
+          "expected_index": 120,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "internships",
+          "recognized": null,
+          "expected_index": 121,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "alongside",
+          "recognized": null,
+          "expected_index": 122,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "my",
+          "recognized": null,
+          "expected_index": 123,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "projects",
+          "recognized": null,
+          "expected_index": 124,
+          "recognized_index": null
+        },
+        {
+          "operation": "equal",
+          "expected": "i",
+          "recognized": "i",
+          "expected_index": 125,
+          "recognized_index": 116
+        },
+        {
+          "operation": "equal",
+          "expected": "have",
+          "recognized": "have",
+          "expected_index": 126,
+          "recognized_index": 117
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "also",
+          "expected_index": null,
+          "recognized_index": 118
+        },
+        {
+          "operation": "equal",
+          "expected": "completed",
+          "recognized": "completed",
+          "expected_index": 127,
+          "recognized_index": 119
+        },
+        {
+          "operation": "substitute",
+          "expected": "internships",
+          "recognized": "internship",
+          "expected_index": 128,
+          "recognized_index": 120
+        },
+        {
+          "operation": "substitute",
+          "expected": "focused",
+          "recognized": "in",
+          "expected_index": 129,
+          "recognized_index": 121
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "generative",
+          "expected_index": null,
+          "recognized_index": 122
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "ai",
+          "expected_index": null,
+          "recognized_index": 123
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "and",
+          "expected_index": null,
+          "recognized_index": 124
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "enterprise",
+          "expected_index": null,
+          "recognized_index": 125
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "technologies",
+          "expected_index": null,
+          "recognized_index": 126
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "gaining",
+          "expected_index": null,
+          "recognized_index": 127
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "and",
+          "expected_index": null,
+          "recognized_index": 128
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "so",
+          "expected_index": null,
+          "recognized_index": 129
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "let's",
+          "expected_index": null,
+          "recognized_index": 130
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "expose",
+          "expected_index": null,
+          "recognized_index": 131
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "the",
+          "expected_index": null,
+          "recognized_index": 132
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "machine",
+          "expected_index": null,
+          "recognized_index": 133
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "learning",
+          "expected_index": null,
+          "recognized_index": 134
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "llm",
+          "expected_index": null,
+          "recognized_index": 135
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "from",
+          "expected_index": null,
+          "recognized_index": 136
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "engineering",
+          "expected_index": null,
+          "recognized_index": 137
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "google",
+          "expected_index": null,
+          "recognized_index": 138
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "cloud",
+          "expected_index": null,
+          "recognized_index": 139
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "ai",
+          "expected_index": null,
+          "recognized_index": 140
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "services",
+          "expected_index": null,
+          "recognized_index": 141
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "and",
+          "expected_index": null,
+          "recognized_index": 142
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "workflow",
+          "expected_index": null,
+          "recognized_index": 143
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "automation",
+          "expected_index": null,
+          "recognized_index": 144
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "platform",
+          "expected_index": null,
+          "recognized_index": 145
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "currently",
+          "expected_index": null,
+          "recognized_index": 146
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "i",
+          "expected_index": null,
+          "recognized_index": 147
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "am",
+          "expected_index": null,
+          "recognized_index": 148
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "contributing",
+          "expected_index": null,
+          "recognized_index": 149
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "to",
+          "expected_index": null,
+          "recognized_index": 150
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "vit",
+          "expected_index": null,
+          "recognized_index": 151
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "mobile",
+          "expected_index": null,
+          "recognized_index": 152
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "ai",
+          "expected_index": null,
+          "recognized_index": 153
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "innovators",
+          "expected_index": null,
+          "recognized_index": 154
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "app",
+          "expected_index": null,
+          "recognized_index": 155
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "where",
+          "expected_index": null,
+          "recognized_index": 156
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "i",
+          "expected_index": null,
+          "recognized_index": 157
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "am",
+          "expected_index": null,
+          "recognized_index": 158
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "working",
+          "expected_index": null,
+          "recognized_index": 159
+        },
+        {
+          "operation": "equal",
+          "expected": "on",
+          "recognized": "on",
+          "expected_index": 130,
+          "recognized_index": 160
+        },
+        {
+          "operation": "equal",
+          "expected": "ai",
+          "recognized": "ai",
+          "expected_index": 131,
+          "recognized_index": 161
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "powered",
+          "expected_index": null,
+          "recognized_index": 162
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "resumia",
+          "expected_index": null,
+          "recognized_index": 163
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "optimization",
+          "expected_index": null,
+          "recognized_index": 164
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "blah",
+          "expected_index": null,
+          "recognized_index": 165
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "blah",
+          "expected_index": null,
+          "recognized_index": 166
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "blah",
+          "expected_index": null,
+          "recognized_index": 167
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "my",
+          "expected_index": null,
+          "recognized_index": 168
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "current",
+          "expected_index": null,
+          "recognized_index": 169
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "industrialized",
+          "expected_index": null,
+          "recognized_index": 170
+        },
+        {
+          "operation": "equal",
+          "expected": "and",
+          "recognized": "and",
+          "expected_index": 132,
+          "recognized_index": 171
+        },
+        {
+          "operation": "substitute",
+          "expected": "generative",
+          "recognized": "problem",
+          "expected_index": 133,
+          "recognized_index": 172
+        },
+        {
+          "operation": "substitute",
+          "expected": "ai",
+          "recognized": "solving",
+          "expected_index": 134,
+          "recognized_index": 173
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "machine",
+          "expected_index": null,
+          "recognized_index": 174
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "learning",
+          "expected_index": null,
+          "recognized_index": 175
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "data",
+          "expected_index": null,
+          "recognized_index": 176
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "science",
+          "expected_index": null,
+          "recognized_index": 177
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "and",
+          "expected_index": null,
+          "recognized_index": 178
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "building",
+          "expected_index": null,
+          "recognized_index": 179
+        },
+        {
+          "operation": "equal",
+          "expected": "technologies",
+          "recognized": "technologies",
+          "expected_index": 135,
+          "recognized_index": 180
+        },
+        {
+          "operation": "substitute",
+          "expected": "and",
+          "recognized": "that",
+          "expected_index": 136,
+          "recognized_index": 181
+        },
+        {
+          "operation": "substitute",
+          "expected": "am",
+          "recognized": "solve",
+          "expected_index": 137,
+          "recognized_index": 182
+        },
+        {
+          "operation": "delete",
+          "expected": "currently",
+          "recognized": null,
+          "expected_index": 138,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "contributing",
+          "recognized": null,
+          "expected_index": 139,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "to",
+          "recognized": null,
+          "expected_index": 140,
+          "recognized_index": null
+        },
+        {
+          "operation": "equal",
+          "expected": "real",
+          "recognized": "real",
+          "expected_index": 141,
+          "recognized_index": 183
+        },
+        {
+          "operation": "equal",
+          "expected": "world",
+          "recognized": "world",
+          "expected_index": 142,
+          "recognized_index": 184
+        },
+        {
+          "operation": "delete",
+          "expected": "ai",
+          "recognized": null,
+          "expected_index": 143,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "projects",
+          "recognized": null,
+          "expected_index": 144,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "through",
+          "recognized": null,
+          "expected_index": 145,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "the",
+          "recognized": null,
+          "expected_index": 146,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "ai",
+          "recognized": null,
+          "expected_index": 147,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "innovators",
+          "recognized": null,
+          "expected_index": 148,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "hub",
+          "recognized": null,
+          "expected_index": 149,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "at",
+          "recognized": null,
+          "expected_index": 150,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "vit",
+          "recognized": null,
+          "expected_index": 151,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "bhopal",
+          "recognized": null,
+          "expected_index": 152,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "career",
+          "recognized": null,
+          "expected_index": 153,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "goals",
+          "recognized": null,
+          "expected_index": 154,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "20",
+          "recognized": null,
+          "expected_index": 155,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "25",
+          "recognized": null,
+          "expected_index": 156,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "of",
+          "recognized": null,
+          "expected_index": 157,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "introduction",
+          "recognized": null,
+          "expected_index": 158,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "apart",
+          "recognized": null,
+          "expected_index": 159,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "from",
+          "recognized": null,
+          "expected_index": 160,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "development",
+          "recognized": null,
+          "expected_index": 161,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "i",
+          "recognized": null,
+          "expected_index": 162,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "enjoy",
+          "recognized": null,
+          "expected_index": 163,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "problem",
+          "recognized": null,
+          "expected_index": 164,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "solving",
+          "recognized": null,
+          "expected_index": 165,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "building",
+          "recognized": null,
+          "expected_index": 166,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "useful",
+          "recognized": null,
+          "expected_index": 167,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "technology",
+          "recognized": null,
+          "expected_index": 168,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "and",
+          "recognized": null,
+          "expected_index": 169,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "applying",
+          "recognized": null,
+          "expected_index": 170,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "machine",
+          "recognized": null,
+          "expected_index": 171,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "learning",
+          "recognized": null,
+          "expected_index": 172,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "and",
+          "recognized": null,
+          "expected_index": 173,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "data",
+          "recognized": null,
+          "expected_index": 174,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "science",
+          "recognized": null,
+          "expected_index": 175,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "to",
+          "recognized": null,
+          "expected_index": 176,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "solve",
+          "recognized": null,
+          "expected_index": 177,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "practical",
+          "recognized": null,
+          "expected_index": 178,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "problems",
+          "recognized": null,
+          "expected_index": 179,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "i",
+          "recognized": null,
+          "expected_index": 180,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "enjoy",
+          "recognized": null,
+          "expected_index": 181,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "learning",
+          "recognized": null,
+          "expected_index": 182,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "new",
+          "recognized": null,
+          "expected_index": 183,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "tools",
+          "recognized": null,
+          "expected_index": 184,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "and",
+          "recognized": null,
+          "expected_index": 185,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "converting",
+          "recognized": null,
+          "expected_index": 186,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "ideas",
+          "recognized": null,
+          "expected_index": 187,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "into",
+          "recognized": null,
+          "expected_index": 188,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "working",
+          "recognized": null,
+          "expected_index": 189,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "projects",
+          "recognized": null,
+          "expected_index": 190,
+          "recognized_index": null
+        },
+        {
+          "operation": "equal",
+          "expected": "i",
+          "recognized": "i",
+          "expected_index": 191,
+          "recognized_index": 185
+        },
+        {
+          "operation": "equal",
+          "expected": "am",
+          "recognized": "am",
+          "expected_index": 192,
+          "recognized_index": 186
+        },
+        {
+          "operation": "equal",
+          "expected": "looking",
+          "recognized": "looking",
+          "expected_index": 193,
+          "recognized_index": 187
+        },
+        {
+          "operation": "equal",
+          "expected": "for",
+          "recognized": "for",
+          "expected_index": 194,
+          "recognized_index": 188
+        },
+        {
+          "operation": "equal",
+          "expected": "an",
+          "recognized": "an",
+          "expected_index": 195,
+          "recognized_index": 189
+        },
+        {
+          "operation": "equal",
+          "expected": "opportunity",
+          "recognized": "opportunity",
+          "expected_index": 196,
+          "recognized_index": 190
+        },
+        {
+          "operation": "equal",
+          "expected": "where",
+          "recognized": "where",
+          "expected_index": 197,
+          "recognized_index": 191
+        },
+        {
+          "operation": "equal",
+          "expected": "i",
+          "recognized": "i",
+          "expected_index": 198,
+          "recognized_index": 192
+        },
+        {
+          "operation": "equal",
+          "expected": "can",
+          "recognized": "can",
+          "expected_index": 199,
+          "recognized_index": 193
+        },
+        {
+          "operation": "equal",
+          "expected": "learn",
+          "recognized": "learn",
+          "expected_index": 200,
+          "recognized_index": 194
+        },
+        {
+          "operation": "delete",
+          "expected": "from",
+          "recognized": null,
+          "expected_index": 201,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "experienced",
+          "recognized": null,
+          "expected_index": 202,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "professionals",
+          "recognized": null,
+          "expected_index": 203,
+          "recognized_index": null
+        },
+        {
+          "operation": "equal",
+          "expected": "contribute",
+          "recognized": "contribute",
+          "expected_index": 204,
+          "recognized_index": 195
+        },
+        {
+          "operation": "substitute",
+          "expected": "to",
+          "recognized": "and",
+          "expected_index": 205,
+          "recognized_index": 196
+        },
+        {
+          "operation": "substitute",
+          "expected": "real",
+          "recognized": "work",
+          "expected_index": 206,
+          "recognized_index": 197
+        },
+        {
+          "operation": "substitute",
+          "expected": "world",
+          "recognized": "on",
+          "expected_index": 207,
+          "recognized_index": 198
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "practical",
+          "expected_index": null,
+          "recognized_index": 199
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "industry",
+          "expected_index": null,
+          "recognized_index": 200
+        },
+        {
+          "operation": "equal",
+          "expected": "projects",
+          "recognized": "projects",
+          "expected_index": 208,
+          "recognized_index": 201
+        },
+        {
+          "operation": "delete",
+          "expected": "and",
+          "recognized": null,
+          "expected_index": 209,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "grow",
+          "recognized": null,
+          "expected_index": 210,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "as",
+          "recognized": null,
+          "expected_index": 211,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "an",
+          "recognized": null,
+          "expected_index": 212,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "ai",
+          "recognized": null,
+          "expected_index": 213,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "ml",
+          "recognized": null,
+          "expected_index": 214,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "or",
+          "recognized": null,
+          "expected_index": 215,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "data",
+          "recognized": null,
+          "expected_index": 216,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "science",
+          "recognized": null,
+          "expected_index": 217,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "professional",
+          "recognized": null,
+          "expected_index": 218,
+          "recognized_index": null
+        },
+        {
+          "operation": "equal",
+          "expected": "that",
+          "recognized": "that",
+          "expected_index": 219,
+          "recognized_index": 202
+        },
+        {
+          "operation": "equal",
+          "expected": "is",
+          "recognized": "is",
+          "expected_index": 220,
+          "recognized_index": 203
+        },
+        {
+          "operation": "equal",
+          "expected": "why",
+          "recognized": "why",
+          "expected_index": 221,
+          "recognized_index": 204
+        },
+        {
+          "operation": "equal",
+          "expected": "i",
+          "recognized": "i",
+          "expected_index": 222,
+          "recognized_index": 205
+        },
+        {
+          "operation": "equal",
+          "expected": "am",
+          "recognized": "am",
+          "expected_index": 223,
+          "recognized_index": 206
+        },
+        {
+          "operation": "insert",
+          "expected": null,
+          "recognized": "really",
+          "expected_index": null,
+          "recognized_index": 207
+        },
+        {
+          "operation": "equal",
+          "expected": "excited",
+          "recognized": "excited",
+          "expected_index": 224,
+          "recognized_index": 208
+        },
+        {
+          "operation": "equal",
+          "expected": "about",
+          "recognized": "about",
+          "expected_index": 225,
+          "recognized_index": 209
+        },
+        {
+          "operation": "equal",
+          "expected": "this",
+          "recognized": "this",
+          "expected_index": 226,
+          "recognized_index": 210
+        },
+        {
+          "operation": "substitute",
+          "expected": "opportunity",
+          "recognized": "role",
+          "expected_index": 227,
+          "recognized_index": 211
+        },
+        {
+          "operation": "delete",
+          "expected": "thank",
+          "recognized": null,
+          "expected_index": 228,
+          "recognized_index": null
+        },
+        {
+          "operation": "delete",
+          "expected": "you",
+          "recognized": null,
+          "expected_index": 229,
+          "recognized_index": null
+        }
+      ]
+    },
+    "confidence": {
+      "method": "faster_whisper_word_probability",
+      "average_word_confidence": 0.7658,
+      "low_confidence_threshold": 0.65,
+      "low_confidence_words": [
+        {
+          "word": "Good",
+          "confidence": 0.071,
+          "start": 0.53,
+          "end": 1.11
+        },
+        {
+          "word": "Haspartia,",
+          "confidence": 0.4764,
+          "start": 2.63,
+          "end": 3.11
+        },
+        {
+          "word": "ear",
+          "confidence": 0.2016,
+          "start": 4.27,
+          "end": 4.81
+        },
+        {
+          "word": "beat",
+          "confidence": 0.1918,
+          "start": 4.81,
+          "end": 5.21
+        },
+        {
+          "word": "X",
+          "confidence": 0.2989,
+          "start": 5.21,
+          "end": 5.41
+        },
+        {
+          "word": "student",
+          "confidence": 0.0932,
+          "start": 5.41,
+          "end": 5.77
+        },
+        {
+          "word": "VIT",
+          "confidence": 0.5066,
+          "start": 5.99,
+          "end": 6.29
+        },
+        {
+          "word": "specializing",
+          "confidence": 0.529,
+          "start": 6.79,
+          "end": 7.67
+        },
+        {
+          "word": "years,",
+          "confidence": 0.17,
+          "start": 14.61,
+          "end": 14.89
+        },
+        {
+          "word": "ML.",
+          "confidence": 0.0451,
+          "start": 17.39,
+          "end": 17.67
+        },
+        {
+          "word": "major",
+          "confidence": 0.4534,
+          "start": 18.93,
+          "end": 19.19
+        },
+        {
+          "word": "projects",
+          "confidence": 0.5506,
+          "start": 19.19,
+          "end": 19.59
+        },
+        {
+          "word": "a",
+          "confidence": 0.3983,
+          "start": 20.07,
+          "end": 20.21
+        },
+        {
+          "word": "react",
+          "confidence": 0.1592,
+          "start": 20.21,
+          "end": 20.43
+        },
+        {
+          "word": "based",
+          "confidence": 0.6456,
+          "start": 20.43,
+          "end": 20.75
+        },
+        {
+          "word": "where",
+          "confidence": 0.504,
+          "start": 21.91,
+          "end": 22.41
+        },
+        {
+          "word": "lecture",
+          "confidence": 0.4846,
+          "start": 24.09,
+          "end": 24.49
+        },
+        {
+          "word": "lp.",
+          "confidence": 0.3721,
+          "start": 26.05,
+          "end": 26.63
+        },
+        {
+          "word": "python,",
+          "confidence": 0.5656,
+          "start": 28.55,
+          "end": 29.21
+        },
+        {
+          "word": "ln,",
+          "confidence": 0.4316,
+          "start": 29.57,
+          "end": 29.99
+        },
+        {
+          "word": "vector,",
+          "confidence": 0.6499,
+          "start": 30.73,
+          "end": 30.91
+        },
+        {
+          "word": "search",
+          "confidence": 0.5773,
+          "start": 31.47,
+          "end": 32.07
+        },
+        {
+          "word": "ever",
+          "confidence": 0.1543,
+          "start": 35.97,
+          "end": 36.25
+        },
+        {
+          "word": "speak",
+          "confidence": 0.4496,
+          "start": 36.25,
+          "end": 36.65
+        },
+        {
+          "word": "an",
+          "confidence": 0.3636,
+          "start": 36.65,
+          "end": 36.93
+        },
+        {
+          "word": "speaking",
+          "confidence": 0.5495,
+          "start": 37.17,
+          "end": 37.45
+        },
+        {
+          "word": "pronunciation,",
+          "confidence": 0.5792,
+          "start": 39.01,
+          "end": 39.77
+        },
+        {
+          "word": "words,",
+          "confidence": 0.5709,
+          "start": 40.99,
+          "end": 41.49
+        },
+        {
+          "word": "eye",
+          "confidence": 0.5062,
+          "start": 43.05,
+          "end": 43.37
+        },
+        {
+          "word": "whisper",
+          "confidence": 0.4009,
+          "start": 43.93,
+          "end": 44.33
+        },
+        {
+          "word": "open",
+          "confidence": 0.2203,
+          "start": 44.33,
+          "end": 44.73
+        },
+        {
+          "word": "cg",
+          "confidence": 0.2348,
+          "start": 44.73,
+          "end": 45.07
+        },
+        {
+          "word": "pipe.",
+          "confidence": 0.2475,
+          "start": 45.45,
+          "end": 45.91
+        },
+        {
+          "word": "generative",
+          "confidence": 0.4568,
+          "start": 48.77,
+          "end": 49.15
+        },
+        {
+          "word": "enterprise",
+          "confidence": 0.3347,
+          "start": 50.27,
+          "end": 50.69
+        },
+        {
+          "word": "And",
+          "confidence": 0.0217,
+          "start": 52.41,
+          "end": 52.61
+        },
+        {
+          "word": "so",
+          "confidence": 0.0651,
+          "start": 52.61,
+          "end": 52.75
+        },
+        {
+          "word": "let's",
+          "confidence": 0.5968,
+          "start": 52.75,
+          "end": 53.81
+        },
+        {
+          "word": "the",
+          "confidence": 0.5778,
+          "start": 54.19,
+          "end": 54.87
+        },
+        {
+          "word": "workflow",
+          "confidence": 0.1926,
+          "start": 64.08,
+          "end": 64.44
+        },
+        {
+          "word": "contributing",
+          "confidence": 0.4863,
+          "start": 67.96,
+          "end": 68.34
+        },
+        {
+          "word": "mobile",
+          "confidence": 0.626,
+          "start": 69.02,
+          "end": 69.6
+        },
+        {
+          "word": "AI",
+          "confidence": 0.6386,
+          "start": 69.6,
+          "end": 70.26
+        },
+        {
+          "word": "app",
+          "confidence": 0.1088,
+          "start": 70.74,
+          "end": 71.2
+        },
+        {
+          "word": "powered",
+          "confidence": 0.6179,
+          "start": 72.7,
+          "end": 73.26
+        },
+        {
+          "word": "resumia",
+          "confidence": 0.3223,
+          "start": 73.26,
+          "end": 74.34
+        },
+        {
+          "word": "blah,",
+          "confidence": 0.4368,
+          "start": 75.22,
+          "end": 75.4
+        },
+        {
+          "word": "my",
+          "confidence": 0.4465,
+          "start": 76.66,
+          "end": 76.68
+        },
+        {
+          "word": "industrialized",
+          "confidence": 0.3836,
+          "start": 77.04,
+          "end": 77.66
+        },
+        {
+          "word": "and",
+          "confidence": 0.2007,
+          "start": 77.66,
+          "end": 77.98
+        },
+        {
+          "word": "problem",
+          "confidence": 0.256,
+          "start": 77.98,
+          "end": 78.28
+        },
+        {
+          "word": "learning,",
+          "confidence": 0.4337,
+          "start": 78.94,
+          "end": 79.92
+        },
+        {
+          "word": "data",
+          "confidence": 0.2067,
+          "start": 79.92,
+          "end": 80.18
+        },
+        {
+          "word": "that",
+          "confidence": 0.6149,
+          "start": 81.42,
+          "end": 81.82
+        },
+        {
+          "word": "solve",
+          "confidence": 0.6203,
+          "start": 81.82,
+          "end": 82.08
+        },
+        {
+          "word": "-world",
+          "confidence": 0.615,
+          "start": 82.34,
+          "end": 82.6
+        },
+        {
+          "word": "I",
+          "confidence": 0.3068,
+          "start": 82.6,
+          "end": 83.7
+        },
+        {
+          "word": "where",
+          "confidence": 0.5448,
+          "start": 85.44,
+          "end": 86.28
+        },
+        {
+          "word": "contribute",
+          "confidence": 0.035,
+          "start": 86.84,
+          "end": 87.22
+        },
+        {
+          "word": "industry",
+          "confidence": 0.4085,
+          "start": 88.22,
+          "end": 88.68
+        }
+      ],
+      "suggestion": "Review the pronunciation of: Good, Haspartia,, ear, beat, X, student, VIT, specializing, years,, ML., major, projects, a, react, based, where, lecture, lp., python,, ln,, vector,, search, ever, speak, an, speaking, pronunciation,, words,, eye, whisper, open, cg, pipe., generative, enterprise, And, so, let's, the, workflow, contributing, mobile, AI, app, powered, resumia, blah,, my, industrialized, and, problem, learning,, data, that, solve, -world, I, contribute, industry."
+    },
+    "speech_rate": {
+      "word_count": 212,
+      "duration_seconds": 93.931,
+      "words_per_minute": 135.42,
+      "speech_rate_category": "Normal",
+      "comment": "Your speech rate is within the configured interview practice range."
+    },
+    "pauses": {
+      "timestamp_source_available": true,
+      "long_pause_threshold_seconds": 1,
+      "long_pause_count": 2,
+      "long_pauses": [
+        {
+          "start": 26.63,
+          "end": 27.79,
+          "duration": 1.16
+        },
+        {
+          "start": 59.97,
+          "end": 63.72,
+          "duration": 3.75
+        }
+      ],
+      "filler_pause_count": 0
+    },
+    "fillers": {
+      "total_filler_words": 1,
+      "filler_breakdown": {
+        "so": 1
+      },
+      "comment": "You used 1 filler expression(s). Try replacing fillers with short silent pauses."
+    },
+    "repetitions": {
+      "repetition_count": 3,
+      "repetitions": [
+        {
+          "phrase": "ln",
+          "consecutive_uses": 2,
+          "timestamp": 29.57
+        },
+        {
+          "phrase": "vector",
+          "consecutive_uses": 2,
+          "timestamp": 30.73
+        },
+        {
+          "phrase": "blah",
+          "consecutive_uses": 3,
+          "timestamp": 75.22
+        }
+      ],
+      "label": "stutter-like repetition detection"
+    },
+    "sentiment": {
+      "label": "positive",
+      "compound_score": 0.8811,
+      "positive": 0.08,
+      "neutral": 0.881,
+      "negative": 0.039,
+      "method": "VADER transcript sentiment estimate",
+      "affects_interview_score": false
+    }
+  },
+  "vision_metrics": {
+    "duration_seconds": 94.113,
+    "source_fps": 30.049,
+    "sample_fps": 2.003,
+    "processed_frames": 189,
+    "face_detected_frames": 188,
+    "face_detected_ratio": 0.9947,
+    "estimated_eye_contact_percent": 78.31,
+    "eye_contact_estimation_method": "face_direction_and_iris_position_proxy",
+    "looking_away_event_count": 6,
+    "looking_away_events": [
+      {
+        "start": 2.995,
+        "end": 3.993,
+        "duration": 0.998
+      },
+      {
+        "start": 27.455,
+        "end": 32.447,
+        "duration": 4.992
+      },
+      {
+        "start": 33.945,
+        "end": 38.437,
+        "duration": 4.492
+      },
+      {
+        "start": 38.936,
+        "end": 43.429,
+        "duration": 4.493
+      },
+      {
+        "start": 46.923,
+        "end": 47.922,
+        "duration": 0.999
+      },
+      {
+        "start": 54.411,
+        "end": 55.909,
+        "duration": 1.498
+      }
+    ],
+    "dominant_face_direction": "center",
+    "face_direction_distribution_percent": {
+      "center": 81.38,
+      "down": 0.53,
+      "left": 8.51,
+      "right": 7.45,
+      "up": 2.13
+    },
+    "head_stability_score": 76,
+    "facial_expression_estimate": {
+      "dominant": "happy",
+      "distribution_percent": {
+        "happy": 79.79,
+        "neutral": 19.15,
+        "serious": 1.06
+      },
+      "method": "MediaPipe facial-landmark geometry heuristic",
+      "affects_interview_score": false
+    },
+    "emotion_summary": {
+      "happy": 79.79,
+      "neutral": 19.15,
+      "serious": 1.06
+    }
+  },
+  "scores": {
+    "fluency_score": 68,
+    "speech_communication_score": 66,
+    "visual_communication_score": 82,
+    "interview_communication_score": 70,
+    "interview_readiness_score": 70,
+    "weights": {
+      "speech": 0.75,
+      "visual": 0.25
+    }
+  },
+  "feedback": [
+    "Your speech rate is within the configured interview practice range.",
+    "You used 1 filler expression(s). Try replacing fillers with short silent pauses.",
+    "You had 2 pause(s) of at least 1.0 seconds.",
+    "Detected 3 repeated word or short-phrase event(s).",
+    "Review the pronunciation of: Good, Haspartia,, ear, beat, X, student, VIT, specializing, years,, ML., major, projects, a, react, based, where, lecture, lp., python,, ln,, vector,, search, ever, speak, an, speaking, pronunciation,, words,, eye, whisper, open, cg, pipe., generative, enterprise, And, so, let's, the, workflow, contributing, mobile, AI, app, powered, resumia, blah,, my, industrialized, and, problem, learning,, data, that, solve, -world, I, contribute, industry.",
+    "Practise these expected words: afternoon, harsh, year, b, tech, bhopal, i, currently, have, a, worked, related, to, artificial, natural, language, key, include, rag, langchain, llms, and, eva, speech, pronunciation, visual, communication, opencv, mediapipe, 10, internships, focused, generative, ai, am, real, world, opportunity, thank, you, for, giving, me, this, introduce, myself, patial, cgpa, of, 30, 40, time, projects, on, intelligence, machine, learning, processing, some, with, based, python, 20, alongside, my, contributing, through, the, innovators, hub, at, vit, career, goals, 25, introduction, apart, from, development, enjoy, problem, solving, building, useful, technology, applying, data, science, solve, practical, problems, new, tools, converting, ideas, into, working, experienced, professionals, grow, as, an, ml, or, professional.",
+    "Pronunciation-style accuracy is 32/100; this is an automated practice estimate, not a clinical assessment.",
+    "Transcript sentiment estimate: positive. This does not affect your score.",
+    "Your eye-contact estimate is 78.3%, showing consistent camera focus.",
+    "Detected 6 sustained looking-away event(s).",
+    "Your interview readiness estimate is 70/100."
+  ],
+  "limitations": [
+    "Pronunciation-style accuracy is based on transcript differences, not phoneme scoring.",
+    "Word confidence is a model probability and is not a clinical pronunciation assessment.",
+    "Repetition detection identifies repeated text patterns and does not diagnose stuttering.",
+    "Transcript sentiment is a language-based estimate and does not reveal a speaker's true feelings.",
+    "Eye contact is estimated from face direction and iris position; it is not exact gaze tracking.",
+    "Face direction and head stability are approximate camera-based estimates.",
+    "Lighting, glasses, occlusion, camera position, and video quality can affect results.",
+    "A dedicated emotion-classification model is intentionally excluded.",
+    "Facial expression categories are landmark-based estimates and do not reveal true emotion."
+  ],
+  "processing_metadata": {
+    "pipeline": "local_combined_analysis",
+    "runtime_seconds": 29.63,
+    "temporary_media_deleted": true
+  }
+}
